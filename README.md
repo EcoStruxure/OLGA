@@ -31,7 +31,7 @@ OLGA takes as input the following:
 
 The output of OLGA is a generated library ready to be used by IoT developers. The generated library is conform to the ontology and is dependent on available serializers and ORMs in various languages (C#, Java, and Python).
 
-##### Published work
+#### Published work
 For more info, refer to the [OLGA paper](./docs/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
 
 ### Current Features
@@ -60,9 +60,11 @@ and many other internal ontologies.
 ## Getting Started
 To get started with using OLGA you may want to check out the following resources:
 
-[User Guide](./docs/UserGuide.md) - how to use various features of the library
+[User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
 
-[Developer Guide](./docs/DeveloperGuide.md) - how to extend OLGA
+[Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide.md) - how to extend OLGA
+
+
 
 
 ## Asking Questions and Reporting Bugs
