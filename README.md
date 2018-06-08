@@ -4,7 +4,26 @@
 OLGA is a generic tool aiming to accelerate the adoption of [Standard W3C Semantic technology](https://www.w3.org/standards/semanticweb/) among developers.
 
 OLGA is licensed under the MIT License.
-Schneider Electric requests contributions to be provided back to benefit the community
+Schneider Electric requests contributions to be provided back to benefit the community.
+
+- [OLGA: an Ontology Library GenerAtor](#olga--an-ontology-library-generator)
+  * [Welcome !](#welcome--)
+    + [Why? : Enhance Developer Experience](#why----enhance-developer-experience)
+    + [What? : An Ontology Library Generator](#what----an-ontology-library-generator)
+    + [How? : A Model-based Engineering Approach](#how----a-model-based-engineering-approach)
+      - [Published work](#published-work)
+    + [Current Features](#current-features)
+      - [Trinity](#trinity)
+      - [Coming soon: RDF4J support](#coming-soon--rdf4j-support)
+      - [Supported Ontologies](#supported-ontologies)
+  * [Getting Started](#getting-started)
+  * [Asking Questions and Reporting Bugs](#asking-questions-and-reporting-bugs)
+  * [Pull Requests](#pull-requests)
+  * [Acknowledgments](#acknowledgments)
+    + [Developers](#developers)
+    + [Contributors](#contributors)
+      - [How to cite this work](#how-to-cite-this-work)
+    + [Dependencies](#dependencies)
 
 ### Why? : Enhance Developer Experience
 1. Reduce friction barrier for developers when working with an ontology model.
@@ -62,9 +81,9 @@ To get started with using OLGA you may want to check out the following resources
 
 [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
 
-[Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide.md) - how to extend OLGA
+[Hello World](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example 
 
-
+[Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide) - how to extend OLGA
 
 
 ## Asking Questions and Reporting Bugs
