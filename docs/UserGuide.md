@@ -22,8 +22,9 @@ Welcome to OLGA user guide, this provides an introduction to OLGA and how it can
 ## Prerequisite
 OLGA is Java 8 based and relies on Maven to compile the generated code.
 Therefore, the following must be installed:
-* Java 8 
-* Maven with **M2_HOME** must be set as an environment variable name
+* Java 8 (JDK)
+* [Maven](https://maven.apache.org/install.html) with **M2_HOME** must be set as an environment variable name
+* [.Net SDK](https://www.microsoft.com/net/learn/get-started/windows)
 
 ## Compile & Package
 After Java 8 is installed and M2_home is set, use the following maven command to compite the source code:
