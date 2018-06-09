@@ -27,7 +27,7 @@ Therefore, the following must be installed:
 * [.Net SDK](https://www.microsoft.com/net/learn/get-started/windows)
 
 ## Compile & Package
-After Java 8 is installed and M2_home is set, use the following maven command to compite the source code:
+After the prerequisites are installed and M2_home is set, use the following maven command to compile the source code:
 ```console
 mvn clean package
 ```
