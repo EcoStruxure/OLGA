@@ -1,0 +1,1072 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.com/sample/"
+     xml:base="http://www.example.com/sample/"
+     xmlns:dsp="http://www.schneiderelectric.com/dsp#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.com/sample"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/sample/connectsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/connectsTo">
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/isConnectedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/controls -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/controls">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/connectsTo"/>
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/isControlledBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasBuilding -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasBuilding">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasFloor -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasFloor">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasPhysicalLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasPhysicalLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasRoom -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasRoom">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasSector -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasSector">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasUnitOfMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/hasUnitOfMeasure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/isUnitOfMeasureOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isControlledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isControlledBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isConnectedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isInArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isInArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isInBuilding -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isInBuilding">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isInFloor -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isInFloor">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isInRoom -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isInRoom">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isMeasuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isMeasuredBy">
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/measures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isMonitoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isMonitoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/isConnectedTo"/>
+        <owl:inverseOf rdf:resource="http://www.example.com/sample/monitors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/isUnitOfMeasureOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/isUnitOfMeasureOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/sample/measures -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/measures"/>
+    
+
+
+    <!-- http://www.example.com/sample/monitors -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/sample/monitors">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/sample/connectsTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/sample/hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasTimeStamp">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasTimeseriesID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasTimeseriesID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasUnitSymbole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasUnitSymbole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/sample/hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/sample/hasValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/sample/ActiveEnergy -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ActiveEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/ActivePower -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ActivePower">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Actuator -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Actuator">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/ApparentEnergy -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ApparentEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/ApparentPower -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ApparentPower">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Appliance -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Appliance">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/isConnectedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/isControlledBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/isMonitoredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Area -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Area">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Building -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Building">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasFloor"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Floor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Current -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Current">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/CurrentUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/CurrentUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/CurrentUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Edge -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Edge">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Elements -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Elements"/>
+    
+
+
+    <!-- http://www.example.com/sample/Energy -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Energy">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/EnergyUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/EnergyUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/EnergyUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Floor -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Floor">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Room"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasSector"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Sector"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Gas -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Gas">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/HVAC -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/HVAC">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Humidity -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Humidity">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/HumidityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/HumidityUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/HumidityUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/LightBulb -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/LightBulb">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Liquid -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Liquid">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Luminosity -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Luminosity">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/LuminosityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/LuminosityUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/LuminosityUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Measurement -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Measurement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Motor -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Motor">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Node -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Node">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/connectsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/controls"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/measures"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/monitors"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasPhysicalLocation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Is an IoT Thing in General</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Panel -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Panel">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/PhysicalLocation -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/PhysicalLocation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Physical Location</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Power -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Power">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/PowerUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/PowerUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/PowerUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Pump -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Pump">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/ReactiveEnergy -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ReactiveEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/ReactivePower -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/ReactivePower">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Room -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Room">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Sector -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Sector">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Room"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Sensor -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Site -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Site">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasBuilding"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.com/sample/Building"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/SolarPanel -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/SolarPanel">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Panel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Solid -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Solid">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/System -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/System">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Temperature -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/TemperatureUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/TemperatureUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/TemperatureUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/UnitofMeasure -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/UnitofMeasure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitSymbole"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/VoltUnit -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/VoltUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/sample/Voltage -->
+
+    <owl:Class rdf:about="http://www.example.com/sample/Voltage">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/sample/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.com/sample/hasUnitOfMeasure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.com/sample/VoltUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/sample/ampere -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/ampere">
+        <rdf:type rdf:resource="http://www.example.com/sample/CurrentUnit"/>
+        <hasUnitSymbole>A</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/celsius -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/celsius">
+        <rdf:type rdf:resource="http://www.example.com/sample/TemperatureUnit"/>
+        <hasUnitSymbole>C</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/fahrenheit -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/fahrenheit">
+        <rdf:type rdf:resource="http://www.example.com/sample/TemperatureUnit"/>
+        <hasUnitSymbole>F</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/kelvin -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/kelvin">
+        <rdf:type rdf:resource="http://www.example.com/sample/TemperatureUnit"/>
+        <hasUnitSymbole>K</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/lux -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/lux">
+        <rdf:type rdf:resource="http://www.example.com/sample/LuminosityUnit"/>
+        <hasUnitSymbole>lx</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/relativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/relativeHumidity">
+        <rdf:type rdf:resource="http://www.example.com/sample/HumidityUnit"/>
+        <hasUnitSymbole>RH</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/volt -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/volt">
+        <rdf:type rdf:resource="http://www.example.com/sample/VoltUnit"/>
+        <hasUnitSymbole>v</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/voltAmper_Hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/voltAmper_Hour">
+        <rdf:type rdf:resource="http://www.example.com/sample/EnergyUnit"/>
+        <hasUnitSymbole>VAh</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/voltAmpere -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/voltAmpere">
+        <rdf:type rdf:resource="http://www.example.com/sample/PowerUnit"/>
+        <hasUnitSymbole>VA</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/voltAmpereReactive -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/voltAmpereReactive">
+        <rdf:type rdf:resource="http://www.example.com/sample/PowerUnit"/>
+        <hasUnitSymbole>VAR</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/voltAmpereReactive_hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/voltAmpereReactive_hour">
+        <rdf:type rdf:resource="http://www.example.com/sample/EnergyUnit"/>
+        <hasUnitSymbole>var_h</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/watt -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/watt">
+        <rdf:type rdf:resource="http://www.example.com/sample/PowerUnit"/>
+        <hasUnitSymbole>W</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/sample/watt_hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/sample/watt_hour">
+        <rdf:type rdf:resource="http://www.example.com/sample/EnergyUnit"/>
+        <hasUnitSymbole>wh</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/ActiveEnergy"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/ApparentEnergy"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/ReactiveEnergy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/ActivePower"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/ApparentPower"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/ReactivePower"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/Actuator"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Appliance"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Edge"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Sensor"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/System"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/Area"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Building"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Floor"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Room"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Sector"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Site"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/Current"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Energy"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Humidity"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Luminosity"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Power"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Temperature"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/CurrentUnit"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/EnergyUnit"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/HumidityUnit"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/LuminosityUnit"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/PowerUnit"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/TemperatureUnit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/Elements"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Measurement"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Node"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/PhysicalLocation"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/UnitofMeasure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/Gas"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Liquid"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Solid"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/sample/HVAC"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/LightBulb"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Motor"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Panel"/>
+            <rdf:Description rdf:about="http://www.example.com/sample/Pump"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
