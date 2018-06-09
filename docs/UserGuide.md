@@ -157,3 +157,5 @@ In simple terms the .Net implementation will transform the following URI:
  
  This can cause problems depending whether a persistence triple store will consider both forms the same. If they are not considered the same, SPARQL queries or LINQ queries will not return any result. 
  
+ ## Hello World Example
+ Next, try a [hello world](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) example to get started.

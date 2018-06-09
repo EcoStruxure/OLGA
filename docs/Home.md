@@ -1,5 +1,3 @@
-# Home
-
 This wiki serves as the primary source of information and documentation for users and evelopers.
 
 ## Table of Content
@@ -114,9 +112,9 @@ Those who contribute over time will be invited to join the project as developers
 }
 ```
 
-** Published work **
+#### Published work
 
-For more info, refer to the [OLGA paper](./docs/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
+For more info, refer to the [OLGA paper](./docs/paper/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
 
 ### Dependencies 
 OLGA uses the following 3rd party libraries:
