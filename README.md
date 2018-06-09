@@ -7,21 +7,21 @@ OLGA is licensed under the MIT License.
 Schneider Electric requests contributions to be provided back to benefit the community.
 
 ## Table of Content
-    + [Why? : Enhance Developer Experience](#why----enhance-developer-experience)
-    + [What? : An Ontology Library Generator](#what----an-ontology-library-generator)
-    + [How? : A Model-based Engineering Approach](#how----a-model-based-engineering-approach)
-    + [Current Features](#current-features)
-      - [Trinity](#trinity)
-      - [Coming soon: RDF4J support](#coming-soon--rdf4j-support)
-      - [Supported Ontologies](#supported-ontologies)
-  * [Getting Started](#getting-started)
-  * [Asking Questions and Reporting Bugs](#asking-questions-and-reporting-bugs)
-  * [Pull Requests](#pull-requests)
-  * [Acknowledgments](#acknowledgments)
-    + [Developers](#developers)
-    + [Contributors](#contributors)
-    + [How to cite this work](#how-to-cite-this-work)
-    + [Dependencies](#dependencies)
+  * [Why? : Enhance Developer Experience](#why----enhance-developer-experience)
+  * [What? : An Ontology Library Generator](#what----an-ontology-library-generator)
+  * [How? : A Model-based Engineering Approach](#how----a-model-based-engineering-approach)
+  * [Current Features](#current-features)
+    + [Trinity](#trinity)
+    + [Coming soon: RDF4J support](#coming-soon--rdf4j-support)
+    + [Supported Ontologies](#supported-ontologies)
+- [Getting Started](#getting-started)
+- [Asking Questions and Reporting Bugs](#asking-questions-and-reporting-bugs)
+- [Pull Requests](#pull-requests)
+- [Acknowledgments](#acknowledgments)
+  * [Developers](#developers)
+  * [Contributors](#contributors)
+  * [How to cite this work](#how-to-cite-this-work)
+  * [Dependencies](#dependencies)
 
 ### Why? : Enhance Developer Experience
 1. Reduce friction barrier for developers when working with an ontology model.
