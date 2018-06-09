@@ -6,12 +6,10 @@ OLGA is a generic tool aiming to accelerate the adoption of [Standard W3C Semant
 OLGA is licensed under the MIT License.
 Schneider Electric requests contributions to be provided back to benefit the community.
 
-- [OLGA: an Ontology Library GenerAtor](#olga--an-ontology-library-generator)
-  * [Welcome !](#welcome--)
+## Table of Content
     + [Why? : Enhance Developer Experience](#why----enhance-developer-experience)
     + [What? : An Ontology Library Generator](#what----an-ontology-library-generator)
     + [How? : A Model-based Engineering Approach](#how----a-model-based-engineering-approach)
-      - [Published work](#published-work)
     + [Current Features](#current-features)
       - [Trinity](#trinity)
       - [Coming soon: RDF4J support](#coming-soon--rdf4j-support)
@@ -22,7 +20,7 @@ Schneider Electric requests contributions to be provided back to benefit the com
   * [Acknowledgments](#acknowledgments)
     + [Developers](#developers)
     + [Contributors](#contributors)
-      - [How to cite this work](#how-to-cite-this-work)
+    + [How to cite this work](#how-to-cite-this-work)
     + [Dependencies](#dependencies)
 
 ### Why? : Enhance Developer Experience
@@ -50,7 +48,7 @@ OLGA takes as input the following:
 
 The output of OLGA is a generated library ready to be used by IoT developers. The generated library is conform to the ontology and is dependent on available serializers and ORMs in various languages (C#, Java, and Python).
 
-#### Published work
+** Published work **
 For more info, refer to the [OLGA paper](./docs/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
 
 ### Current Features
@@ -79,11 +77,11 @@ and many other internal ontologies.
 ## Getting Started
 To get started with using OLGA you may want to check out the following resources:
 
-[User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
+* [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
 
-[Hello World](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example 
+* [Hello World](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example 
 
-[Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide) - how to extend OLGA
+* [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide) - how to extend OLGA
 
 
 ## Asking Questions and Reporting Bugs
@@ -108,7 +106,7 @@ Those who contribute over time will be invited to join the project as developers
 * [Mark Stemmler](https://github.com/DarthStem) for his advice regarding C# code generation along with his help with Trinity.
 * SemioDesk Trinity team (Sebastian and Moritz) for their development effort to extend Trinity in addition to their guidance and support.
 
-#### How to cite this work
+### How to cite this work
 ```
 @inproceedings{Kaed2017AMD,
   title={A Model Driven Approach Accelerating Ontology-based IoT Applications Development},
