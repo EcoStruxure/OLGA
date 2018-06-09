@@ -5,11 +5,11 @@ OLGA is a generic tool aiming to accelerate the adoption of [Standard W3C Semant
 
 OLGA provides a better development experience by focusing on:
 
-[x] Reducing friction barrier for developers when working with an ontology model.
+* Reducing friction barrier for developers when working with an ontology model.
 
-[x] Accelerating development of ontology based systems.
+* Accelerating development of ontology based systems.
 
-[x] Eliminating complexity by providing Object Oriented libraries for developers.
+* Eliminating complexity by providing Object Oriented libraries for developers.
 
 OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards ([RDF](https://www.w3.org/2001/sw/wiki/RDF), [OWL](https://www.w3.org/OWL)) and generating a library conform to the ontology model.
 
