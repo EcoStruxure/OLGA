@@ -42,8 +42,8 @@ OLGA takes as input the following:
 
 The output of OLGA is a generated library ready to be used by IoT developers. The generated library is conform to the ontology and is dependent on available serializers and ORMs in various languages (C#, Java, and Python).
 
-** Published work **
-For more info, refer to the [OLGA paper](./docs/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
+**Published work**
+For more info, refer to the [OLGA paper](https://github.com/EcoStruxure/OLGA/blob/master/docs/paper/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
 
 ### Current Features
 The current version of OLGA supports the following:
@@ -56,11 +56,11 @@ Code generation compliant with [Trinity](https://bitbucket.org/semiodesk/trinity
 * Persistence Database based on DotNetRDF (Stardog, Virtuoso, and others)
 
 #### Coming soon: RDF4J support
-The PoC in [OLGA paper](./docs/OLGA-Semantics.pdf) supported various libraries, we decided to rewrite OLGA and started with Trinity. Other libraries will be added soon such as RDF4J. 
+The PoC in [OLGA paper](https://github.com/EcoStruxure/OLGA/blob/master/docs/paper/OLGA-Semantics.pdf) supported various libraries, we decided to rewrite OLGA and started with Trinity. Other libraries will be added soon such as RDF4J. 
 
 #### Supported Ontologies
 OLGA has been tested with the following ontologies:
-- [x] [Saref](http://ontology.tno.nl/saref/)
+- [x] [Saref](http://ontology.tno.nl/saref.ttl)
 - [x] [OneM2M](http://www.onem2m.org/ontology/Base_Ontology/oneM2M_Base_Ontology-V_3_2_0.owl)
 - [x] [Provenance](https://www.w3.org/TR/prov-o/)
 - [x] [Semantic Sensor Network](https://www.w3.org/TR/vocab-ssn/)
@@ -115,7 +115,7 @@ Those who contribute over time will be invited to join the project as developers
 
 #### Published work
 
-For more info, refer to the [OLGA paper](./docs/paper/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
+For more info, refer to the [OLGA paper](https://github.com/EcoStruxure/OLGA/blob/master/docs/paper/OLGA-Semantics.pdf) presented at SEMANTICS'13- SIS-IoT Workshop, 2017.
 
 ### Dependencies 
 OLGA uses the following 3rd party libraries:

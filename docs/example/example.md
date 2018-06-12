@@ -5,13 +5,13 @@ In this session, we will go through the instantiation of an ontology model (clas
 We will rely on a set of annotated classes and an Objet-Mapping-Library for RDF to generate a topology instance specific to a site.
 The generated topology can be in memory, or stored in an RDF persistent store. It can also be queried in memory or from a peristent store.
 
-![](../figures/yourLibrary.png)
+![](https://github.com/EcoStruxure/OLGA/blob/master/docs/figures/yourLibrary.png)
 
 This library can be part of an IoT application, embedded in a commissioning tool or deployed on a system.
 
 ## Table of Contents
 - [1. Generate a Library from the Demo Ontology](#1-generate-a-library-from-the-demo-ontology)
-- [2. Create a .Net Framework project](#2-create-a-net-framework-project)
+- [2. Create a .Net project](#2-create-a-net-project)
 - [3. Initialization](#3-initialization)
   * [In Memory usage](#in-memory-usage)
 - [4. Instantiate the Ontology using the Generated Library](#4-instantiate-the-ontology-using-the-generated-library)
@@ -22,24 +22,24 @@ This library can be part of an IoT application, embedded in a commissioning tool
 - [5. LINQ Queries](#5-linq-queries)
 
 ### 1. Generate a Library from the Demo Ontology
-First, retrieve the [ExampleDemoOntology.owl](./helloWorld/ExampleDemoOntology.owl) and generate a library to a given ${Path Of Your Choice}:
+First, retrieve the [ExampleDemoOntology.owl](https://github.com/EcoStruxure/OLGA/blob/master/docs/example/ExampleDemoOntology.owl) and generate a library to a given ${Path Of Your Choice}:
 
 ```console
 java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name DemoExample --path .../ExampleDemoOntology.owl --out ${Path Of Your Choice}
 ```
 
 The following sections will go through the steps need to instantiate an ontology, persist it and query it.
-The source code for these steps can be found [here](./Example.zip).
+The source code for these steps can be found [here](https://github.com/EcoStruxure/OLGA/blob/master/docs/example/DemoExample.zip).
 
 In case you want to try another ontology make you sure you take a look at this URI Normalization at the user guide section.
 
-### 2. Create a .Net Framework project
+### 2. Create a .Net project
 
-First create a .NetFramework console project.
+First create a .Net (Core or Framework) console project.
 
 To instantiate an ontology, the following dependencies are required:
 
-* [Trinity](https://www.nuget.org/packages/Semiodesk.Trinity) Library provided by SemioDesk available at Nuget.org. It can be added as a Nuget package
+* Trinity Library provided by SemioDesk available at Nuget.org. It can be added as a [Nuget package](https://www.nuget.org/packages/Semiodesk.Trinity)
 * The generated library by OLGA available on your machine, it must added as a reference from the DemoExample-Trinity.dll which is located in the following path:
 
 > `${Path Of Your Choice}\DemoExample-dotnetTrinity\bin\Release\net461`
@@ -109,7 +109,7 @@ Create the following topology `static void CreateTopology()`:
 * A Sensor `hum1` which measures the previous Humidity measurement `h1`
 * Sensor `hum1` located on Floor `f2`
 
-The code for the topology is [here](./Program.cs)
+The code for the topology is [here](https://github.com/EcoStruxure/OLGA/tree/master/docs/example/Program.cs)
 
 #### a. Serialize to file
 
@@ -150,19 +150,19 @@ IStore _entityStore = StoreFactory.CreateStore("provider=stardog;host=http://loc
 
 Make sure to create a new database in Stardog with the name `DemoExample` then build and start your program.
 
-![Stardog UI to create a new DB](../figures/stardogNewDB.png)
+![](https://github.com/EcoStruxure/OLGA/blob/master/docs/figures/stardogNewDB.png)
 
 #### c. View Your Instantiated Topology
 Once you run the program, the database will be populated with the created topology as shown in the figure below:
-![Intantiated Ontology](../figures/OntologyInstanceInStardo.png)
+![Intantiated Ontology](https://github.com/EcoStruxure/OLGA/blob/master/docs/figures/OntologyInstanceInStardog.png)
 
 #### d. Upload your Ontology Model (T-Box)
 
 The DB has the instantiated ontology (A-box) only for now, therefore, we will add the ontology model (T-box) to start executing queries based on the model.
 
-Add the [Ontology Model](../example/ExampleDemoOntology.owl) to the DB as shown in the image below:
+Add the [Ontology Model](https://github.com/EcoStruxure/OLGA/tree/master/docs/example/ExampleDemoOntology.owl) to the DB as shown in the image below:
 
-![Upload the Ontology Model](../figures/addOntologyModel.png)
+![Upload the Ontology Model](https://github.com/EcoStruxure/OLGA/blob/master/docs/figures/addOntologyModel.png)
 
  To upload the Ontology model follow these steps:
 
@@ -210,4 +210,4 @@ private static void QueryAllSensors()
  }
 ```
 
-The complete code example is available [here](./DemoExample.zip)
+The complete code example is available [here](https://github.com/EcoStruxure/OLGA/tree/master/docs/example/DemoExample.zip)
