@@ -78,7 +78,7 @@ To get started with OLGA you may want to check out the following resources:
 
 * [Hello World](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example 
 
-* [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/DeveloperGuide) - how to extend OLGA
+* [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/Developer-Guide) - how to extend OLGA
 
 
 ## Asking Questions and Reporting Bugs
