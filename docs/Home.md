@@ -35,7 +35,7 @@ OLGA complements existing OWL, RDF serializers such as [RDF4J](http://rdf4j.org/
 OLGA takes as input the following:
 1. One or more Ontology
 2. A parameter indicating the dependency of the generated library.
-	1. Trinity - C#
+	1. Trinity - C#, .Net Standard 2.0
 	2. RDF4J - Java
 	3. DotNetRDF - C#
 	3. RDFAlchemy - Python
@@ -65,6 +65,7 @@ OLGA has been tested with the following ontologies:
 - [x] [Provenance](https://www.w3.org/TR/prov-o/)
 - [x] [Semantic Sensor Network](https://www.w3.org/TR/vocab-ssn/)
 - [x] [Brick](https://brickschema.org/download/)
+- [x] [Pizza](https://protege.stanford.edu/ontologies/pizza/pizza.owl)
 
 and many other internal ontologies.
 

@@ -1,162 +1,213 @@
-# OLGA User Guide
-
-## Getting Started
-Welcome to OLGA user guide, this provides an introduction to OLGA and how it can be used to instantiate an Ontology Model
-
-## Table Of Content
-- [Prerequisite](#prerequisite)
-- [Compile & Package](#compile---package)
-- [Run](#run)
-- [Options](#options)
-- [Restrictions](#restrictions)
-    + [1. Reserved keywords](#1-reserved-keywords)
-    + [2. Special Characters](#2-special-characters)
-    + [3. Empty Strings](#3-empty-strings)
-    + [4. Ontology Interdependencies](#4-ontology-interdependencies)
-    + [5. Constraints levels](#5-constraints-levels)
-    + [6. Individuals not conform to their Class Object/Data Properties](#6-individuals-not-conform-to-their-class-object-data-properties)
-    + [7. OWL Unions and Intersections](#7-owl-unions-and-intersections)
-    + [8. URI Normalization in .Net](#8-uri-normalization-in-net)
+## Hello World Example in C#
 
 
-## Prerequisite
-OLGA is Java 8 based and relies on Maven to compile the generated code.
-Therefore, the following must be installed:
-* Java 8 (JDK)
-* [Maven](https://maven.apache.org/install.html) with **M2_HOME** must be set as an environment variable name
-* [.Net SDK](https://www.microsoft.com/net/learn/get-started/windows)
+In this session, we will go through the instantiation of an ontology model (classes and relationships) programmatically. 
+We will rely on a set of annotated classes and an Objet-Mapping-Library for RDF to generate a topology instance specific to a site.
+The generated topology can be in memory, or stored in an RDF persistent store. It can also be queried in memory or from a peristent store.
 
-## Compile & Package
-After the prerequisites are installed and M2_home is set, use the following maven command to compile the source code:
+![](../figures/yourLibrary.png)
+
+This library can be part of an IoT application, embedded in a commissioning tool or deployed on a system.
+
+## Table of Contents
+- [1. Generate a Library from the Demo Ontology](#1-generate-a-library-from-the-demo-ontology)
+- [2. Create a .Net Framework project](#2-create-a-net-framework-project)
+- [3. Initialization](#3-initialization)
+  * [In Memory usage](#in-memory-usage)
+- [4. Instantiate the Ontology using the Generated Library](#4-instantiate-the-ontology-using-the-generated-library)
+  * [a. Serialize to file](#a-serialize-to-file)
+  * [b. Persistence into a Triple Store](#b-persistence-into-a-triple-store)
+  * [c. View Your Instantiated Topology](#c-view-your-instantiated-topology)
+  * [d. Upload your Ontology Model (T-Box)](#d-upload-your-ontology-model--t-box-)
+- [5. LINQ Queries](#5-linq-queries)
+
+### 1. Generate a Library from the Demo Ontology
+First, retrieve the [ExampleDemoOntology.owl](./helloWorld/ExampleDemoOntology.owl) and generate a library to a given ${Path Of Your Choice}:
+
 ```console
-mvn clean package
-```
-To skip the tests, use the following command:
-```console
-mvn clean package -DskipTests=true
+java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name DemoExample --path .../ExampleDemoOntology.owl --out ${Path Of Your Choice}
 ```
 
-##  Run
-The previous phase packages the dependencies in a single jar ready to be used to start generating libraries from ontology files.
- 
-The following command generates a library from [Saref](http://ontology.tno.nl/saref/) ontology:
-```console
-java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name Saref --path .\src\test\resources\saref\
-``` 
+The following sections will go through the steps need to instantiate an ontology, persist it and query it.
+The source code for these steps can be found [here](./Example.zip).
 
-This command will generate a saref-Trinity.dll at the following path:
+In case you want to try another ontology make you sure you take a look at this URI Normalization at the user guide section.
 
-> `.\OLGA\generated\Saref-dotnetTrinity\bin\Release\net461`
+### 2. Create a .Net Framework project
 
-## Options
+First create a .Net console project.
 
-OLGA can be configured with the following options:
+To instantiate an ontology, the following dependencies are required:
 
-| Option    | Argument | Description | Mandatory |
-|-----------|----------|-------------|-----------|
-| --path | path | a folder path to one or more ontology | Mandatory |
-| --code | code label | generated code label: cs, java, or py  | Mandatory |
-| --library | library label | dependency on library: Trinity, RDF4J  | Mandatory |
-| --name | ${string} | Desired Generated Library Name | Mandatory |
-| --out | path | a path to output directory | Optional |
-| -preserve | None | relies on the Ontology URI when generating folder structure. When two or more ontologies are given as an input to OLGA it is preferable to use "-preserve" option to avoid overwriting the identical names entities | Optional |
-| --version | `<major>.<minor>.<build>.<revision>` | By default OLGA assigns the Ontology version to the generated library. When the version is missing, OLGA version is assigned to the generated library. This option allows the user to force the version of the generated library | Optional |
-| -partial | None | Relevant for C# code generation only, appends the keyword `partial` to the generated code | Optional |
+* [Trinity](https://www.nuget.org/packages/Semiodesk.Trinity) Library provided by SemioDesk available at Nuget.org. It can be added as a Nuget package
+* The generated library by OLGA available on your machine, it must added as a reference from the DemoExample-Trinity.dll which is located in the following path:
 
- 
-## Restrictions
-OLGA is a powerful tool aiming to generate libraries from ontologies. However, some restrictions apply:
+> `${Path Of Your Choice}\DemoExample-dotnetTrinity\bin\Release\net461`
 
-#### 1. Reserved keywords
+### 3. Initialization
 
-The following keywords are reserved in both C# and Java as class, package or namespace name, therefore they cannot be used in the Ontology Model. 
+First, create a namespace to be used for the instantiated individuals and theirs properties:
 
-These keywords are: 
-
->* **abstract**, **as**, **assert**, **base**, **bool**, **boolean**, **break**
->* **byte**, **case**, **catch**, **char**, **checked**, **class**, **const**,
->* **continue**, **decimal**, **default**, **delegate**, **do**, **double**, **else**
->* **enum**, **extends**, **event**, **explicit**, **extern**, **false**, **final**
->* **finally**, **fixed**, **float**, **for**, **foreach**, **goto**, **if**
->* **implicit**, **implements**, **import**, **in**, **int**
- **interface**, **internal**
->* **instanceof**, **is**, **lock**, **long**, **native**, **namespace**, **new**
->* **null**, **object**, **operator**, **out**, **override**, **params**, **package**
->* **private**, **protected**, **public**, **readonly**, **ref**, **return**, **sbyte**
->* **sealed**, **short**, **sizeof**, **stackalloc**, **strictfp**, **super**, **static**
->* **string**, **struct**, **switch**, **this**, **transient**, **throw**, **throws**
->* **true**, **try**, **typeof**, **uint**, **ulong**, **unchecked**, **unsafe**
->* **ushort**, **using**, **using static**, **virtual**, **void**, **volatile**, **while**
-      
-#### 2. Special Characters
-
-Cannot use special characters in the URI or class name. 
-These characters are: {`~!@#$%^&*()-+={}[]\|:;"'?/<>,.}.
-
-#### 3. Empty Strings
-
-Cannot start any entity name "Class, object property or data property" with number or empty string.
-
-#### 4. Ontology Interdependencies
-
-When an ontology is dependent on one or other ontologies:
-
-* The ontology and its dependencies need to be placed in the same folder.
-* If Protégé is used, make sure to remove the file path dependencies.
-* When two or more ontologies are given as an input to OLGA it is advisable to use "-preserve" option to avoid overwriting the identical names entities.
-
-
-#### 5. Constraints levels 
-When an Object/Data property is identified more than once OLGA will prioritize according to the following priorities (higher to lower):
-
-* exactly
-* max
-* min
-* only 
-* some
-
-
-In the following example:
-
-(1) `Alice knows Bob`
-
-(2) `Alice knows only Bob`
-
-OLGA will take into consideration the more restrictive case (2) since `owl:Restriction` is more restrictive than `owl:ObjectProperty`.
-
- 
-#### 6. Individuals not conform to their Class Object/Data Properties 
-Individuals with new Object/Data properties which are non existent on the Class will not be generated by OLGA.
-
-#### 7. OWL Unions and Intersections 
-The Ontology language offers more expressivity than the object oriented model. Therefore, the code generation for union and intersection expressions require a special handling.
-
-Currently, OLGA supports these expressions by splitting the union/intersections into several expressions.
-For example, the following expression:
-
-` ComfortSensors measures only (Temperature and Humidity) `
-
-Will be split into the two expressions and code generated as following:
-
-(1) ` ComfortSensors measures only Temperature `
-
-(2) ` ComfortSensors measures only Humidity `
-
-#### 8. URI Normalization in .Net
-
-According to the [RFC3986](https://tools.ietf.org/html/rfc3986) the generic URI syntax consists of a hierarchical sequence of components referred to as the scheme, authority, path, query, and fragment.
+```csharp 
+static string ns = "http://example.com/sample/";
 ```
-URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-hier-part   = "//" authority path-abempty
-               / path-absolute
-               / path-rootless
-               / path-empty 
+Trinity is based on the factory pattern which can be configured to work in memory of with a persistent triple store.
+
+#### In Memory usage
+To use Trinity in memory the `StoreFactory` can be configured as follows:
+
+```csharp 
+IStore _entityStore = StoreFactory.CreateStore("provider=dotnetrdf"); 
 ```
 
-In simple terms the .Net implementation will transform the following URI:
- `http://www.example.com#MyConcept` to `http://www.example.com/#MyConcept` by adding an extra **/** before **#MyConcept**.
+Once the StoreFactory is configured, an `IModel` is used to create the instances of the model:
+
+ ```csharp
+ context = _entityStore.GetModel(new Uri(ns));
+ ```
+
+The `InitContextInMemory()` function is provided below:
+```csharp
+1: static string ns = "http://example.com/sample/";
+2: static IModel context;
+3:        
+4: public static void InitContextInMemory()
+5: {
+6:  IStore _entityStore = StoreFactory.CreateStore("provider=dotnetrdf");
+7:  context = _entityStore.GetModel(new Uri(ns));
+8: }
+```
  
- This can cause problems depending whether a persistence triple store will consider both forms the same. If they are not considered the same, SPARQL queries or LINQ queries will not return any result. 
- 
- ## Hello World Example
- Next, try a [hello world](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) example to get started.
+### 4. Instantiate the Ontology using the Generated Library
+
+Now that the context is initialized, the Example Ontology instantiation can take place. Let's start by instantiating a Floor:
+
+* Invoke the Factory to create an instance of Floor
+* Fill the name parameter
+* Commit the changes
+
+```csharp
+//Create a floor 1
+1: Floor floor1 = context.CreateResource<Floor>(ns + "f1");
+2: floor1.Name = "floor 1";
+3: floor1.Commit();
+```
+
+You will need to add the following declaration import:
+```csharp
+using DemoExample.Rdf.Model;
+```
+
+Create the following topology `static void CreateTopology()`:
+* A Floor `f1`
+* A Floor `f2`
+* A Building `b1` with the two previous floors
+* A Temperature Measurement `temp1`
+* A Sensor `TempSensor1` which measures the previous Temperature measurement `temp1`
+* Sensor `TempSensor1` located on Floor `f1`
+* A Humidity Measurement `h1`
+* A Sensor `hum1` which measures the previous Humidity measurement `h1`
+* Sensor `hum1` located on Floor `f2`
+
+The code for the topology is [here](./Program.cs)
+
+#### a. Serialize to file
+
+The content of the InMemory ContextFactory can be flushed into an RDF file as following:
+```csharp
+1: public static void Serialize()
+2: {
+3:  try
+4:    {
+5:     FileStream stream = new FileStream("C:\\demoExample.rdf", FileMode.Create);
+6:     context.Write(stream, RdfSerializationFormat.RdfXml);
+7:	   Console.WriteLine("Ontology Instance Generated at C:\\demoExample.rdf");
+8:    }
+9:    catch (Exception ex)
+10:   {
+11:    Console.WriteLine(ex.Message);
+12:   }
+12:
+13: }
+```        
+
+Line 6, the developer can choose from many other RdfSerializationFormats
+
+#### b. Persistence into a Triple Store
+
+As mentioned earlier, the Context can be configured to use persistence Triple Store. 
+
+For this example, we will be using [Stardog](https://www.stardog.com/) Community Edition Triple Store.
+
+Other persistence triple stores can be used with the StoreFactory which is based on DotNetRDF library as shown in [DotNetRDF documentation](https://github.com/dotnetrdf/dotnetrdf/wiki/UserGuide-Triple-Store-Integration) and [Trinity documentation](https://bitbucket.org/semiodesk/trinity/wiki/FirstSteps)
+
+Persistence Triple Store usage
+To use Trinity with a persistence store, the `StoreFactory` can be configured as follows:
+
+```csharp
+IStore _entityStore = StoreFactory.CreateStore("provider=stardog;host=http://localhost:5820;uid=admin;pw=admin;sid=DemoExample");
+```
+
+Make sure to create a new database in Stardog with the name `DemoExample` then build and start your program.
+
+![Stardog UI to create a new DB](../figures/stardogNewDB.png)
+
+#### c. View Your Instantiated Topology
+Once you run the program, the database will be populated with the created topology as shown in the figure below:
+![Intantiated Ontology](../figures/OntologyInstanceInStardo.png)
+
+#### d. Upload your Ontology Model (T-Box)
+
+The DB has the instantiated ontology (A-box) only for now, therefore, we will add the ontology model (T-box) to start executing queries based on the model.
+
+Add the [Ontology Model](../example/ExampleDemoOntology.owl) to the DB as shown in the image below:
+
+![Upload the Ontology Model](../figures/addOntologyModel.png)
+
+ To upload the Ontology model follow these steps:
+
+1.	+Add
+2.	Browse
+3.	And choose the ExampleDemoOntology.owl
+4.	Upload
+5.	Refresh your browser
+
+Stardog offers an ingestion REST API which can be used to upload the Ontology Model. 
+
+### 5. LINQ Queries
+
+[SPARQL 1.1](https://www.w3.org/TR/sparql11-query/) is the W3C standard query language for RDF and OWL. However, some developers prefer to rely on LINQ like expressions to query the model.
+
+With Trinity ORM, it is also possible to use the Language Integrated Query. LINQ has become a de-facto standard in .Net to allow programmers to query data in an expressive manner. Trinity transforms a subset of the LINQ queries into SPARQL.
+
+An example to query all floors is given below:
+```csharp
+private static void QueryAllFloors()
+ {
+  Console.WriteLine("QueryAllFloors .. start");
+  var floors = context.AsQueryable<Floor>();
+  foreach (Floor floor in floors)
+  {
+  Console.WriteLine("Found: " + floor.Name);
+  }
+  Console.WriteLine("QueryAllFloors .. done");
+ }
+```
+
+Or all the sensors, their physical locations and their description:
+```csharp
+private static void QueryAllSensors()
+ {
+  Console.WriteLine("AllSensors .. start");
+  var sensors = context.AsQueryable<Sensor>();
+  foreach (Sensor sensor in sensors)
+  {
+   Console.WriteLine("Found: " + sensor.Name);
+   Console.WriteLine("Description: " + sensor.Description);
+   Console.WriteLine("Located at:" + sensor.PhysicalLocation.Name);
+   }
+   Console.WriteLine("AllSensors .. done");
+ }
+```
+
+The complete code example is available [here](./DemoExample.zip)
