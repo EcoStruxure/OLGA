@@ -93,7 +93,7 @@ OLGA became open source thanks to the support of Schneider Electric and EcoStrux
 OLGA is developed by the following people:
 * [Charbel Kaed](https://github.com/charbull) (Architect & Dev)
 * [Andre Ponnouradjane](https://github.com/ponnou) (Dev, 2017-2018)
-* Alber Tadrous (Dev)
+* [Alber Tadrous](https://github.com/AlberTadrous) (Dev)
 * Farrukh Bek (QA)
 
 Those who contribute over time will be invited to join the project as developers.

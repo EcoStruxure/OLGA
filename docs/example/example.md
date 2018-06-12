@@ -49,7 +49,7 @@ To instantiate an ontology, the following dependencies are required:
 First, create a namespace to be used for the instantiated individuals and theirs properties:
 
 ```csharp 
-static string ns = "http://example.com/sample/";
+static string ns = "http://www.example.com/";
 ```
 Trinity is based on the factory pattern which can be configured to work in memory of with a persistent triple store.
 
