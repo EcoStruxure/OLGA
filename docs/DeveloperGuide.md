@@ -2,6 +2,24 @@
 
 This page contains information for developers on how to extend OLGA. This developers guide is intended for advanced users who want to extend OLGA further and the project developers. If you are new to OLGA you should start with the [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) before moving onto this guide.
 
+- [OLGA Developers Guide](#olga-developers-guide)
+  * [I. Architecture & Design](#i-architecture---design)
+    + [I) a. Menu](#i--a-menu)
+    + [I) b. Importer](#i--b-importer)
+    + [c. Visitor](#c-visitor)
+    + [I) d. Internal Model](#i--d-internal-model)
+    + [I) e. Templates](#i--e-templates)
+    + [I) f. Generator](#i--f-generator)
+    + [I) g. Compiler & Packager](#i--g-compiler---packager)
+  * [II. General Coding Information](#ii-general-coding-information)
+    + [II) a. Compiling](#ii--a-compiling)
+    + [II) b. Coding Style](#ii--b-coding-style)
+    + [II) c. Deprecation Policy](#ii--c-deprecation-policy)
+        * [Java](#java)
+        * [C#](#c-)
+        * [Python](#python)
+    + [II) d. Test Environment](#ii--d-test-environment)
+
 ## I. Architecture & Design
 This section depicts the architecture of OLGA. 
 
