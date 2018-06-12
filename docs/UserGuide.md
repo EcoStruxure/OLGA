@@ -39,7 +39,7 @@ mvn clean package -DskipTests=true
 ##  Run
 The previous phase packages the dependencies in a single jar ready to be used to start generating libraries from ontology files.
  
-The following command generates a library from [Saref](http://ontology.tno.nl/saref/) ontology:
+The following command generates a library from [Saref](http://ontology.tno.nl/saref.ttl) ontology:
 ```console
 java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name Saref --path .\src\test\resources\saref\
 ``` 
