@@ -1,0 +1,1143 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:base_ontology="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology">
+        <versionIRI rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology-v3_2_0"/>
+        <rdfs:comment>This file contains the Base Ontology of oneM2M as specified in TS-0012
+
+=========================================
+Copyright Notification
+
+The oneM2M Partners authorize you to copy this document, provided that you retain all copyright and other proprietary notices contained in the original materials on any copies of the materials and that you comply strictly with these terms.
+This copyright permission does not constitute an endorsement of the products or services, nor does it encompass the granting of any patent rights. 
+The oneM2M Partners assume no responsibility for errors or omissions in this document.
+
+(c) 2016, oneM2M Partners Type 1 (ARIB, ATIS, CCSA, ETSI, TIA, TSDSI, TTA, TTC). All rights reserved.
+
+Notice of Disclaimer &amp; Limitation of Liability
+
+The information provided in this document is directed solely to professionals who have the appropriate degree of experience to understand and interpret its contents in accordance with generally accepted engineering or other professional standards and applicable regulations.
+No recommendation as to products or vendors is made or should be implied.
+
+NO REPRESENTATION OR WARRANTY IS MADE THAT THE INFORMATION IS TECHNICALLY ACCURATE OR SUFFICIENT OR CONFORMS TO ANY STATUTE,GOVERNMENTAL RULE OR EGULATION, AND FURTHER, NO REPRESENTATION OR WARRANTY IS MADE OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR AGAINST INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS.
+NO oneM2M PARTNER TYPE 1 SHALL BE LIABLE, BEYOND THE AMOUNT OF ANY SUM RECEIVED IN PAYMENT BY THAT PARTNER FOR THIS DOCUMENT, WITH RESPECT TO ANY CLAIM, AND IN NO EVENT SHALL oneM2M BE LIABLE FOR LOST PROFITS OR OTHER INCIDENTAL OR ON SEQUENTIAL DAMAGES.
+oneM2M EXPRESSLY ADVISES ANY AND ALL USE OF OR RELIANCE UPON THIS INFORMATION PROVIDED IN THIS DOCUMENT IS AT THE RISK OF THE USER.
+=========================================</rdfs:comment>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#resourceDescriptorLink -->
+
+    <AnnotationProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#resourceDescriptorLink">
+        <rdfs:comment>The resourceDescriptorLink annotation property is used to refer to a semanticDescriptor resource that contains more information about its subject. Its subject may be any individual and the range shall be the data literal or URI reference that represents the address of the semanticDescriptor</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#consistsOf -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#consistsOf">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+        <rdfs:comment>A Device can consist of (i.e. be composed) of several (sub-) Devices</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#convertsTo -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#convertsTo">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#VariableConversion"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>The conversion rule (the VariableConversion in the domain of Object Property: hasConversion) converts the value range of a given Variable (see 6.2.22 Object Property: hasConversion) into the value range of another Variable (the Variable in the range of Object Property: convertsTo)</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#describes -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#describes">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Aspect"/>
+        <rdfs:comment>A Variable describes an Aspect (a quality or kind)</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesCommand -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesCommand">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command"/>
+        <rdfs:comment>A –machine interpretable- Operation or an Input/OutputDataPoint of a Service exposes a –human understandable- Command to a network</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesFunction -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesFunction">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:comment>A Service exposes a Functionality to the network and makes it discoverable, registerable and remotely controllable in the network</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasCommand -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasCommand">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command"/>
+        <rdfs:comment>A Functionality of a Device can be influenced / observed by a human user through the Commands that this Functionality has and that are offered to the user</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasConversion -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasConversion">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#VariableConversion"/>
+        <rdfs:comment>A Variable (in the domain of Object Property: hasConversion) can have a conversion rule (the VariableConversion in the range of Object Property: hasConversion) to convert the value range of the Variable into the value range of another Variable</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasFunction -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasFunction">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:comment>In order to accomplish its task, a Device performs one or more Functionalities</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInput -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInput">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationInput"/>
+        <rdfs:comment>An Operation of a Service of the Device or a Command of a Functionality of the Device can have transient OperationInput data.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInputDataPoint -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInputDataPoint">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InputDataPoint"/>
+        <rdfs:comment>A Service or an Operation of a Service of the Device can have InputDataPoints. Communicating entities write data into InputDataPoints and the Device retrieves the data at times according to an internal schedule.
+ - An InputDataPoint is a persistent resource</rdfs:comment>
+        <rdfs:comment>Note:
+If an InputDataPoint is mandatory for a Service or Operation then 
+the cardinality of hasInputDataPoint must be - min 1.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasMetaData -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasMetaData">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Aspect"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MetaData"/>
+        <rdfs:comment>A Value of a Thing can have MetaData (like units, precision-ranges).</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperation -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperation">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+        <rdfs:comment>A Service communicates by means of Operations over the network to transmit data to/from other devices</rdfs:comment>
+        <rdfs:comment>Note:
+If an Operation is mandatory for a Service then 
+the cardinality of hasOperation must be - min 1.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperationState -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperationState">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationState"/>
+        <rdfs:comment>An Operation may have an OperationState that is exposed</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutput -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutput">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput"/>
+        <rdfs:comment>An Operation of a Service of the Device or a Command of a Functionality of the Device can have transient OperationOutput data.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutputDataPoint -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutputDataPoint">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OutputDataPoint"/>
+        <rdfs:comment>A Service or an Operation of a Service of the Device can have OutputDataPoints. The Device writes data into OutputDataPoints at times according to an internal schedule and the communicating entitis retrieves the data.
+ - An OutputDataPoint is a persistent resource</rdfs:comment>
+        <rdfs:comment>Note:
+If an OutputDataPoint is mandatory for a Service or Operation then 
+the cardinality of hasOutputDataPoint must be - min 1.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasService -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasService">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+        <rdfs:comment>The Functionalities of a Device are exposed in the network as Services of the Device</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubService -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubService">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+        <rdfs:comment>A Service may be composed of smaller, independent (sub)Services, e.g. re-usable servicemodules</rdfs:comment>
+        <rdfs:comment>Note:
+If an Service constist of at least one sub-Service then 
+the cardinality of hasSubService must be - min 1.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubStructure -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubStructure">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>A structured Variable can be composed of (sub-)Variables</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingProperty -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingProperty">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ThingProperty"/>
+        <rdfs:isDefinedBy>A Thing may have properties that can be described by Values</rdfs:isDefinedBy>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingRelation -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingRelation">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+        <rdfs:isDefinedBy>A Thing may have relations to itself or to other Things (e-g. a Thing &quot;Room&quot; could have a relation &quot;has_Door&quot; with a Thing &quot;Door&quot;)</rdfs:isDefinedBy>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#isPartOf -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#isPartOf">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InterworkedDevice"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork"/>
+        <rdfs:isDefinedBy>An InterworkedDevice constitutes a part of an AreaNetwork</rdfs:isDefinedBy>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#refersTo -->
+
+    <ObjectProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#refersTo">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:range rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Aspect"/>
+        <rdfs:isDefinedBy>A Functionality of a Device can refer to a certain Aspect (a quality or kind) that is measured or controlled by that Functionality. 
+e.g. a temperature sensor would refer to the Aspect &quot;Temperature&quot; that it measures</rdfs:isDefinedBy>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>This Data Property specifies the restrictions on the data type of the SimpleTypeVariable.
+The Data Property &quot;hasDataRestriction&quot; shall always be sub-classed</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_langRange -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_langRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_length -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_length">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxExclusive -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxExclusive">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxInclusive -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxInclusive">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxLength -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_maxLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minExclusive -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minExclusive">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minInclusive -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minInclusive">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minLength -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_minLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern">
+        <rdfs:subPropertyOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataType -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataType">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl:rational </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl:real </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdf:PlainLiteral</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdf:XMLLiteral</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:NCName </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:NMTOKEN </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:Name </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:anyURI</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:base64Binary </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:boolean</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:byte </rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:dateTime </rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:dateTimeStamp </rdf:first>
+                                                                                                                        <rdf:rest>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:decimal </rdf:first>
+                                                                                                                                <rdf:rest>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:hexBinary </rdf:first>
+                                                                                                                                        <rdf:rest>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:int </rdf:first>
+                                                                                                                                                <rdf:rest>
+                                                                                                                                                    <rdf:Description>
+                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:integer </rdf:first>
+                                                                                                                                                        <rdf:rest>
+                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:language </rdf:first>
+                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:long </rdf:first>
+                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:negativeInteger </rdf:first>
+                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:nonNegativeInteger </rdf:first>
+                                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:nonPositiveInteger </rdf:first>
+                                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:normalizedString </rdf:first>
+                                                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:positiveInteger </rdf:first>
+                                                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:short </rdf:first>
+                                                                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:string </rdf:first>
+                                                                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:token </rdf:first>
+                                                                                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:unsignedByte </rdf:first>
+                                                                                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:unsignedInt </rdf:first>
+                                                                                                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:unsignedLong </rdf:first>
+                                                                                                                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                                                                                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd:unsignedShort </rdf:first>
+                                                                                                                                                                                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                </rdf:rest>
+                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                </rdf:rest>
+                                                                                                                                                            </rdf:Description>
+                                                                                                                                                        </rdf:rest>
+                                                                                                                                                    </rdf:Description>
+                                                                                                                                                </rdf:rest>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:rest>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:rest>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>This Data Property specifies the data type  of the SimpleTypeVariable as text string</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingAnnotation -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingAnnotation">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>This data property contains a description of a Thing. 
+Note: Data Property: hasThingAnnotation should be used in cases where the annotation data do not change very often and/or where they are usually not the subject of semantic operations  (e.g. semantic discovery). Otherwise Object Propety: hasThingPropery should be used
+E.g. a certain type of Device could have the model (as a numeric description) or the name of the manufacturer (as a textual annotation)</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasValue -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasValue">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>This data property contains the value of the Variable if that value is part of the semantic description and is not contained in a different resource (identified by the oneM2MTargetURI data property). Storing the value of a Variable in a semantic description (i.e. as part of the RDF description in the semanticDescriptor resource) is useful for values that are relatively static (e.g. the name of the manufacturer).
+ - Data properties &quot;hasValue&quot; and &quot;oneM2MTargetURI&quot; are mutually exclusive. Only one of the two shall be instantiated.</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyCommunicationProtocol -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyCommunicationProtocol">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>Identification of a communication protocol (e.g. ZigBee_1_0)</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyPhysicalStandard -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyPhysicalStandard">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>Identification of the physical properties of a Area Network technology (e.g. IEEE_802_15_4_2003_2_4GHz).</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyProfile -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#netTechnologyProfile">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>Identification of a profile (e.g. ZigBee_HA) of a Area Network technology.</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MAttribute -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MAttribute">
+        <rdfs:domain rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>This Data Property contains the name of the attribute of the oneM2M resource of type &lt;flexContainer&gt; or the the child resource of the oneM2M resource of type &lt;container&gt;  that is referenced with the oneM2MTargetURI and  that stores the value of the SimpleTypeVariable
+ - if the resource-type of the  oneM2M resource that is referenced with the oneM2MTargetURI is &lt;container&gt; then this Data Property shall contain the text string &quot;#latest&quot;</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MMethod -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MMethod">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <rdfs:comment>This data property contains a oneM2M CRUD Method through which the oneM2M instantiation of the value of the Variable can be manipulated by the communicating entity.
+ - It contains the string &quot;RETRIEVE&quot; for retrieving the variable when the oneM2M resource is of type &lt;container&gt; or &lt;flexContainer&gt;. This applies to sub-classes: OperationOutput, OutputDatapoint, ThingProperty and OperationState
+ - It contains the string &quot;CREATE&quot; for updating the variable when the oneM2M resource is of type &lt;container&gt;. This applies to sub-classes: OperationInput, InputDatapoint, ThingProperty
+ - It contains the string &quot;UPDATE&quot; for updationg the variable when the oneM2M resource is of type &lt;flexContainer&gt;. This applies to sub-classes: OperationInput, InputDatapoint, ThingProperty</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MTargetURI -->
+
+    <DatatypeProperty rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#oneM2MTargetURI">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+                    <rdf:Description rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>oneM2MTargetURI (range data type: rdfs: Literal)
+This data property contains the URI of a oneM2M resource (&lt;container&gt; or &lt;flexContainer&gt;) through which the oneM2M instantiation of the value of the Variable can be manipulated by the communicating entity. It can contain an absolute address or an address relative to the &lt;semanticDescriptor&gt; resource that holds the RDF description of the Variable. 
+That address could be e.g. 
+ - The value of the parentID for the &lt;container&gt; or &lt;flexContainer&gt; of a Input- or OutputDataPoint which has child-resource of type &lt;semanticDescriptor&gt; that holds the RDF description of the DataPoint</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#AreaNetwork">
+        <rdfs:comment>An AreaNetwork (Class: AreaNetwork) is a Network that provides data transport services between an Interworked Device and the oneM2M System. Different area Networks can use heterogeneous network technologies that may or may not support IP access</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Aspect -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Aspect">
+        <rdfs:comment>An Aspect (Class: Aspect) describes the real-world aspect that a functionality relates to. Aspect is also used to describe the quality or kind OperationInput- or OperationOutput variables. 
+The Aspect could be a (physical or non-physical) entity or it could be a quality</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInput"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationInput"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInputDataPoint"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InputDataPoint"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutput"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutputDataPoint"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OutputDataPoint"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Command (Class: Command) represents an action that can be performed to support the Functionality. A Command is the human understandable name of that action that is invoked in a device or is reported by the device. An Operation exposes a Command to the network. OperationInput and OperationOutput of the related Operation can parameterize the command.
+e.g. the Functionality &quot;dimming-functionality&quot; of a light switch that remotely controls a light could have a Command &quot;setLightIntensity&quot;, with a parameter that has values 0 - 100 %.
+ - Also InputDataPoints and OutputDataPoints expose Commands to the network. When a Device communicates in a RESTful way then changing (UPDATEing) an InputDataPoint triggers an action in the Device once the Device has read out the data from the InputDataPoint.
+ - Similarly, when a Device sets the data of an OutputDataPoint then it provides state information about the Device.
+Note: In RESTful systems the names of Input- and OutputDataPoints are usually chosen in such a way that they express the Command, i.e. the human-understandable meaning (e.g. a binary InputDataPoint of a lightswitch could have a name &quot;Set_Light_Status&quot;). In such a case the Command coincides with the DataPoint.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ControllingFunction -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ControllingFunction">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:comment>A ControllingFunctionality (Class: ControllingFunctionality) represents a functionality  that has impacts on the real world, but does not gather data. In general a ControllingFunctionality has Commands (and/or Operations of its related Services) that receives Input data
+E.g. a thermostat would have &quot;temperature-adjustment&quot; as a ControllingFunctionality</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#consistsOf"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasService"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasFunction"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Device (Class: Device) is a object designed to accomplish a particular task. A Device contains some logic and is producer and/or consumer of data that are exchanged via its Services with other oneM2M entities (Devices, Things) in the network. A Device may be a physical or non-physical entity.
+In the context of oneM2M a Device is always assumed to be capable of communicating electronically via a network.
+ - In order to accomplish its task, the device performs one or more functionalities 
+ - These functionalities are exposed in the network as Services of the Device.
+ - A Device can be composed of several (sub-) Devices 
+ - Each Device (including sub-Devices) needs to be individually addressable in the network.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function">
+        <priorVersion>A Functionality (Class: Functionality) represents the functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one functionality.
+The functionality exhibits the – human understandable – meaning what the device &quot;does&quot;. 
+A Functionality refers to (e.g. observes or influences) some real-world aspect(s), that can be modelled as a Class: Aspect.
+E.g. considering a &quot;light switch&quot; then a related Functionality could be &quot;Controlling_ON_OFF&quot; or &quot;Controlling Brightness&quot;. These functionalities would refer to an Aspect &quot;light-control&quot;.
+
+A Functionality of a Device can be influenced / observed by a human user through the Commands that this Functionality has and that are offered to the user</priorVersion>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InputDataPoint -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InputDataPoint">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>InputDataPoint (Class: InputDataPoint) is a Variable of a Service that is accessed by a RESTful Device in its environment and that the Device reads out autonomously (e.g. at periodic times).
+To enable a third party to instruct the device to retrieve (out of schedule) the current value of a InputputDataPoint devices often also offer a GET_InputDataPoint Operation to trigger the device to retrieve the data from the InputDataPoint</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InterworkedDevice -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InterworkedDevice">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"/>
+        <rdfs:comment>An InterworkedDevice (Class: InterworkedDevice) is a Device – e.g. in an Area Network – that does not support oneM2M interfaces and can only be accessed from the oneM2M System by communicating with a &quot;proxied&quot; (virtual) device that has been created by an Interworking Proxy Entity</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MeasuringFunction -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MeasuringFunction">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+        <rdfs:comment>A MeasuringFunctionality (Class: MeasuringFunctionality) represents a functionality that has no impacts on the real world, but only gathers data. In general a MeasuringFunctionality has Commands (and/or Operations of its related Services)  that generate Output data
+E.g. a temperature sensor would have &quot;temperature-sensing&quot; as a MeasuringFunctionality</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MetaData -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MetaData">
+        <rdfs:comment>MetaData (Class: MetaData) contain data (like units, precision-ranges …) about a Variable or about an Aspect. 
+E.g. the indoor temperature could have meta data: &quot;Degrees Celsius&quot;</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesCommand"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Command"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInput"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationInput"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperationState"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationState"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutput"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An Operation (Class: Operation)  is the means of a Service to communicate in a procedure-type manner over the network (i.e. transmit data to/from other devices). It is the –machine interpretable- exposure of a –human understandable- Command to a network.
+An Operation is transient. I.e. an Operation can be invoked, possibly produces output and is finished.
+ - A non-oneM2M Device or a oneM2M entity (e.g. an AE) can invoke an Operation of the Device (oneM2M Device or InterworkedDevice) and that invocation can trigger some action in the Device. If an Operation has input data it may receive input data from 
+ - InputDataPoints (persistent resources) and/or
+ - OperationInput (transient resources, that are deleted when the Operation finished)
+and potentially produce output data into
+ - OutputDataPoints (persistent resources) and/or
+ - OperationOutput (transient resources, that are deleted when the Operation finished)
+An Operation correlates the output data of the Operation to the input data that were used at Operation invokation.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationInput -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationInput">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>OperationInput (Class: OperationInput) describes an input of an Operation of a Service. OperationInput also describes the input of an Command.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>OperationOutput (Class: OperationOutput) describes an output of an Operation. OperationOutput also describes the output of a Command. 
+ - An Operation/Command may have multiple OperationInputs and/or OperationOutputs</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationState -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationState">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable"/>
+        <rdfs:subClassOf>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern"/>
+                        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data_received_by_application</hasValue>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern"/>
+                        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data_transmitted_to_interworked_device</hasValue>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern"/>
+                        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">operation_ended</hasValue>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern"/>
+                        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">operation_failed</hasValue>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction_pattern"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataType"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>describes the current state during the lifetime of an Operation. The OperationState class represents all possible values for that state (enumerated individuals). The OperationState is set during the progress of the operation by the entity invoking the operation, the entity that is the target of the operation, e.g. a device (or for interworked devices by the IPE) and the CSE. It takes values like 
+&quot;data_received_by_application&quot;,  &quot;operation_ended&quot;, &quot;operation_failed&quot;, &quot;data_transmitted_to_interworked_device&quot;.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OutputDataPoint -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OutputDataPoint">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>OutputDataPoint (Class: OutputDataPoint) is a Variable of a Service that is set by a RESTful Device in its environment and that the Device updates autonomously (e.g. at periodic times). To enable a third party to instruct the device to update (out of schedule) the current value of a OutputputDataPoint devices often also offer a SET_OutputDataPoint Operation to trigger the device to update the data of the OutputDataPoint</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#exposesFunction"/>
+                <someValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Function"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasInputDataPoint"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#InputDataPoint"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOperation"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Operation"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasOutputDataPoint"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OutputDataPoint"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubService"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Service"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Service (Class: Service) is a electronic representation of a Functionality in a network. The Service exposes the Functionality to the network and makes it discoverable, registerable and remotely controllable in the network. 
+A Service is offered by a device that wants (a certain set of) its Functionalities to be discoverable, registerable, remotely controllable by other devices in the network. 
+A Service can expose one or more Functionalities and a Functionality can be exposed by one or more Services.
+The Input- and Output DataPoints and Operations of a Service may have the same names as for a different Service, however the Service to which they belong differentiates how they are addressed in the Device (e.g. via a port specific to the Service).
+NOTE: While a Functionality  describes the – human understandable – meaning of a Service of the device the Service is used to describe how such functionality is represented in a communication network and can be accessed by electronic means. The Service and its Operations is therefore dependent on the technology of the network, hard- and software of the device.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#SimpleTypeVariable">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubStructure"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</qualifiedCardinality>
+                <onClass rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataRestriction"/>
+                <allValuesFrom rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasDataType"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>SimpleTypeVariable (Class: SimpleTypeVariable) is a sub-class of class:Variable that only consists of Variables of simple xml types like xsd:integer, xsd:string…, potentially including restrictions
+
+The simple datatypes and –restrictions contained in &quot;OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)&quot; are supported. (see http://www.w3.org/TR/owl2-syntax/)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingProperty"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ThingProperty"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingRelation"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Thing in oneM2M  (Class: Thing) is an entity that can be identified in the oneM2M System. 
+A Thing that is not a Device is not able to conmmunicate electronically with its environment. However, the sub-class of Thing that is able to interact electronically is called a &quot;Device&quot;.
+A Thing may have ThingProperties (Object Property: hasThingProperty). A Thing can have relations to other things (Object Property: hasThingRelation).
+Since a Thing that is not a Device is not able to conmmunicate electronically it cannot influence the value of its ThingProperties or being influenced by it. Similarly a Thing cannot document its - real-world - relationships (via hasThingRelation) to other Things.
+
+E.g. A room that is modelled in oneM2M would be a Thing that could have a room-temperature as a ThingProperty and could have a relationship &quot;isAdjacentTo&quot; to another room</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ThingProperty -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ThingProperty">
+        <rdfs:subClassOf rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+        <rdfs:comment>A Value (Class: Value) denotes a property of a Thing. A Value can e.g. be observed or influenced by devices, or it constitutes static data about a Thing.
+E.g. the indoor temperature of the room could be a Value of a Thing &quot;room&quot;.
+A Value of a thing can concern a certain Aspect, e.g. the indoor temperature concerns the Aspect &quot;Temperature&quot; that could be measured by a temperature sensor.
+A Value of a Thing can have meta data</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasSubStructure"/>
+                <allValuesFrom rdf:resource="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Variable"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Variable (Class: Variable) constitutes a super class to the following classes: ThingProperty, OperationInput, OperationOutput, OperationState, InputDataPoint, OutputDataPoint, SimpleTypeVariable. Its members are entities that store some data (e.g. integers, text, or structured data) that can change over time. 
+These data of the Variable usually describe some real-world Aspects (e.g. a temperature) and can have MetaData (e.g. units, precision..)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.onem2m.org/ontology/Base_Ontology/base_ontology#VariableConversion -->
+
+    <Class rdf:about="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#VariableConversion">
+        <rdfs:comment>A VariableConversion (Class: VariableConversion) represents a conversion rule from the value range of one Variable into the value range of another Variable. The plain text specification of that rule is contained in the annotation property rdfs:comment</rdfs:comment>
+    </Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

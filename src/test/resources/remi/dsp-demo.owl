@@ -1,0 +1,1087 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.schneiderelectric.com/dsp#"
+     xml:base="http://www.schneiderelectric.com/dsp"
+     xmlns:dsp="http://www.schneiderelectric.com/dsp#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.schneiderelectric.com/dsp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#connectsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#connectsTo">
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#isConnectedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#controls -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#controls">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#connectsTo"/>
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#isControlledBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasBuilding -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasBuilding">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasFloor -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasFloor">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasPhysicalLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasPhysicalLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasRoom -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasRoom">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasSector -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasSector">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasUnitOfMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#isUnitOfMeasureOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isControlledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isControlledBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isConnectedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isInArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isInArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isInBuilding -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isInBuilding">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isInFloor -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isInFloor">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isInRoom -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isInRoom">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isMeasuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isMeasuredBy">
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#measures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isMonitoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isMonitoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#isConnectedTo"/>
+        <owl:inverseOf rdf:resource="http://www.schneiderelectric.com/dsp#monitors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#isUnitOfMeasureOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#isUnitOfMeasureOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#measures -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#measures"/>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#monitors -->
+
+    <owl:ObjectProperty rdf:about="http://www.schneiderelectric.com/dsp#monitors">
+        <rdfs:subPropertyOf rdf:resource="http://www.schneiderelectric.com/dsp#connectsTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasTimeStamp">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasTimeseriesID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasTimeseriesID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasUnitSymbole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasUnitSymbole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.schneiderelectric.com/dsp#hasValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ActiveEnergy -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ActiveEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ActivePower -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ActivePower">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Actuator -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Actuator">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ApparentEnergy -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ApparentEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ApparentPower -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ApparentPower">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Appliance -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Appliance">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#isConnectedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#isControlledBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#isMonitoredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Area -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Area">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Building -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Building">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasFloor"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Floor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Current -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Current">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#CurrentUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#CurrentUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#CurrentUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Edge -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Edge">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Elements -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Elements"/>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Energy -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Energy">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#EnergyUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#EnergyUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#EnergyUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Floor -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Floor">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Room"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasSector"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Sector"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Gas -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Gas">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#HVAC -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#HVAC">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Humidity -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Humidity">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#HumidityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#HumidityUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#HumidityUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#LightBulb -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#LightBulb">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Liquid -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Liquid">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Luminosity -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Luminosity">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#LuminosityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#LuminosityUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#LuminosityUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#MalfunctionSensor -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#MalfunctionSensor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Sensor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasValue"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#TroubleShouting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Measurement -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Measurement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Motor -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Motor">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Node -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Node">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#connectsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#controls"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasPhysicalLocation"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#measures"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#monitors"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Is an IoT Thing in General</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Panel -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Panel">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#PhysicalLocation -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#PhysicalLocation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Physical Location</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Power -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Power">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#PowerUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#PowerUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#PowerUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Pump -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Pump">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Appliance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ReactiveEnergy -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ReactiveEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Energy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ReactivePower -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#ReactivePower">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Power"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Room -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Room">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Sector -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Sector">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Room"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Sensor -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Site -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Site">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasBuilding"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#Building"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#SolarPanel -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#SolarPanel">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Panel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Solid -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Solid">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Elements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#System -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#System">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Temperature -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#TemperatureUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#TemperatureUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#TemperatureUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#TroubleShouting -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#TroubleShouting"/>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#UnitofMeasure -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#UnitofMeasure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitSymbole"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#VoltUnit -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#VoltUnit">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#Voltage -->
+
+    <owl:Class rdf:about="http://www.schneiderelectric.com/dsp#Voltage">
+        <rdfs:subClassOf rdf:resource="http://www.schneiderelectric.com/dsp#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.schneiderelectric.com/dsp#hasUnitOfMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.schneiderelectric.com/dsp#VoltUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#ampere -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#ampere">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#CurrentUnit"/>
+        <hasUnitSymbole>A</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#celsius -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#celsius">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#TemperatureUnit"/>
+        <hasUnitSymbole>C</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#fahrenheit -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#fahrenheit">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#TemperatureUnit"/>
+        <hasUnitSymbole>F</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#kelvin -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#kelvin">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#TemperatureUnit"/>
+        <hasUnitSymbole>K</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#lux -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#lux">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#LuminosityUnit"/>
+        <hasUnitSymbole>lx</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#relativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#relativeHumidity">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#HumidityUnit"/>
+        <hasUnitSymbole>RH</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#volt -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#volt">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#VoltUnit"/>
+        <hasUnitSymbole>v</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#voltAmper_Hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#voltAmper_Hour">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#EnergyUnit"/>
+        <hasUnitSymbole>VAh</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#voltAmpere -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#voltAmpere">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#PowerUnit"/>
+        <hasUnitSymbole>VA</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#voltAmpereReactive -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#voltAmpereReactive">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#PowerUnit"/>
+        <hasUnitSymbole>VAR</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#voltAmpereReactive_hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#voltAmpereReactive_hour">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#EnergyUnit"/>
+        <hasUnitSymbole>var_h</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#watt -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#watt">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#PowerUnit"/>
+        <hasUnitSymbole>W</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.schneiderelectric.com/dsp#watt_hour -->
+
+    <owl:NamedIndividual rdf:about="http://www.schneiderelectric.com/dsp#watt_hour">
+        <rdf:type rdf:resource="http://www.schneiderelectric.com/dsp#EnergyUnit"/>
+        <hasUnitSymbole>wh</hasUnitSymbole>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ActiveEnergy"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ApparentEnergy"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ReactiveEnergy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ActivePower"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ApparentPower"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#ReactivePower"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Actuator"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Appliance"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Edge"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Sensor"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#System"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Area"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Building"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Floor"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Room"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Sector"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Site"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Current"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Energy"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Humidity"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Luminosity"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Power"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Temperature"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#CurrentUnit"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#EnergyUnit"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#HumidityUnit"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#LuminosityUnit"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#PowerUnit"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#TemperatureUnit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Elements"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Measurement"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Node"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#PhysicalLocation"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#UnitofMeasure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Gas"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Liquid"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Solid"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#HVAC"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#LightBulb"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Motor"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Panel"/>
+            <rdf:Description rdf:about="http://www.schneiderelectric.com/dsp#Pump"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

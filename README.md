@@ -13,7 +13,7 @@ OLGA provides a better development experience by focusing on:
 
 OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards ([RDF](https://www.w3.org/2001/sw/wiki/RDF), [OWL](https://www.w3.org/OWL)) and generating a library conform to the ontology model.
 
-The generated library is then imported and used to programmatically:
+The generated library is then imported and used to programmatically to:
 1. Generate an ontology instance conform to the ontology model.
 2. Query the generated ontology instance by relying on Object Oriented Model instead of [SPARQL](https://www.w3.org/TR/sparql11-query/).
 
@@ -21,7 +21,7 @@ OLGA is licensed under the [MIT License](./LICENSE.TXT).
 Schneider Electric requests contributions to be provided back to benefit the community.
 
 ## Getting Started
-To get started with OLGA check the following resources:
+To get started with OLGA, please check the following resources:
 
 * [Home](https://github.com/EcoStruxure/OLGA/wiki/Home) - general information about OLGA and its supported features
 

@@ -6,7 +6,7 @@ This page contains information for developers on how to extend OLGA. This develo
   * [I. Architecture & Design](#i-architecture---design)
     + [I) a. Menu](#i--a-menu)
     + [I) b. Importer](#i--b-importer)
-    + [c. Visitor](#c-visitor)
+    + [I) c. Visitor](#i--c-visitor)
     + [I) d. Internal Model](#i--d-internal-model)
     + [I) e. Templates](#i--e-templates)
     + [I) f. Generator](#i--f-generator)
@@ -42,12 +42,14 @@ OLGA relies [Apache Commons Cli](https://commons.apache.org/proper/commons-cli/)
 ### I) b. Importer
 Relies on the [OWL API](https://github.com/owlcs/owlapi) to load into memory one or more ontologies and merges them into one ontology easier to visit.
 
-### c. Visitor
+### I) c. Visitor
 OLGA implements a visitor pattern to traverse all the elements of a given ontology provided by the Importer. The visitor crosses the following elements: Classes, ObjectProperties, DataProperties, Individuals, Literals, and the various
 axioms to populate the internal model. The visitor module relies on OWL API.
 
 ### I) d. Internal Model
-The Model allows capturing the ontology information (T-Box) independent of any targeted library or programming language. Separating the model from any targeted implementation offers OLGA a huge flexibility making the support for an additional language or a dependent library simply a matter of adding templates. The model is populated by the visitor, consists of a representation layer which captures all the elements of an ontology, it is inspired by the work of [Kalyanpur et al](https://pdfs.semanticscholar.org/5af1/38779ab343a802aa29e93ca96d347f393f7f.pdf).
+The Model allows capturing the ontology information (T-Box) independent of any targeted library or programming language. Separating the model from any targeted implementation offers OLGA a huge flexibility making the support for an additional language or a dependent library simply a matter of adding templates. 
+
+The model is populated by the visitor, consists of a representation layer which captures all the elements of an ontology, it is inspired by the work of [Kalyanpur et al](https://pdfs.semanticscholar.org/5af1/38779ab343a802aa29e93ca96d347f393f7f.pdf).
 
 The following figure outline the various elements of the model:
 ![](https://github.com/EcoStruxure/OLGA/blob/master/docs/figures/OLGAModel.png)
