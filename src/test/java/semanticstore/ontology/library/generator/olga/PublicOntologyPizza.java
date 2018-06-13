@@ -1,10 +1,10 @@
 package semanticstore.ontology.library.generator.olga;
 
-import static org.junit.Assert.assertFalse;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
