@@ -1,7 +1,7 @@
 # OLGA: an Ontology SDK
 
 ## Welcome !
-OLGA (Ontology Library GenerAtor) is an Ontology SDK tool aiming to accelerate the adoption of [Standard W3C Semantic technology](https://www.w3.org/standards/semanticweb/) among developers. 
+OLGA (Ontology Library GenerAtor) is a generic tool aiming to accelerate the adoption of [Standard W3C Semantic technology](https://www.w3.org/standards/semanticweb/) among developers. 
 
 OLGA provides a better development experience by focusing on:
 

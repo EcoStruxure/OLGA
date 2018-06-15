@@ -4,7 +4,7 @@
 	<groupId>semanticstore.ontology.library.generator</groupId>
 	<artifactId>OLGA</artifactId>
 	<version>0.0.3</version>
-	<properties> 
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<owlapi.version>5.1.5</owlapi.version>
 		<freemarker.version>2.3.28</freemarker.version>

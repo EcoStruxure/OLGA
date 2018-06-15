@@ -1,18 +1,27 @@
 /*
--------------------------
-
-MIT License
-
-Copyright (c) 2018, Schneider Electric USA, Inc.    
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----------------------
-*/
+ * -------------------------
+ * 
+ * MIT License
+ * 
+ * Copyright (c) 2018, Schneider Electric USA, Inc.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+ * NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * ---------------------
+ */
 package semanticstore.ontology.library.generator.visitor;
 
 import java.util.ArrayList;
@@ -247,13 +256,15 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
       }
 
       if (action.toString() != null && !action.toString().isEmpty()) {
-        ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
+        ZPair<String, String> dataProperty =
+            XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
         zDataProperty.setRangeXSDType(dataProperty.getKey());
         zDataProperty.setPackageName(dataProperty.getValue());
       }
       // if the range is not typed put it as a string by default
       else {
-        ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+        ZPair<String, String> dataProperty =
+            XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
         zDataProperty.setRangeXSDType(dataProperty.getKey());
         zDataProperty.setPackageName(dataProperty.getValue());
       }
@@ -273,18 +284,20 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
       if (log.isDebugEnabled()) {
         log.debug(" -Range " + action.toString());
       }
-      
+
       if (action.toString() != null && !action.toString().isEmpty()) {
-        ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
+        ZPair<String, String> dataProperty =
+            XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
         zDataProperty.setRangeXSDType(dataProperty.getKey());
         zDataProperty.setPackageName(dataProperty.getValue());
       }
       // if the range is not typed put it as a string by default
       else {
-        ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+        ZPair<String, String> dataProperty =
+            XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
         zDataProperty.setRangeXSDType(dataProperty.getKey());
         zDataProperty.setPackageName(dataProperty.getValue());
-      }  
+      }
     });
     zDataProperty.setRestrictionType("Some");
     zclass.add_DataProperty(zDataProperty);
@@ -303,13 +316,15 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
           log.debug(" -Range " + action.toString());
         }
         if (action.toString() != null && !action.toString().isEmpty()) {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
         // if the range is not typed put it as a string by default
         else {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
@@ -332,13 +347,15 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
           log.debug(" -Range " + action.toString());
         }
         if (action.toString() != null && !action.toString().isEmpty()) {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
         // if the range is not typed put it as a string by default
         else {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
@@ -361,13 +378,15 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
           log.debug(" -Range " + action.toString());
         }
         if (action.toString() != null && !action.toString().isEmpty()) {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName(action.toString(), selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
         // if the range is not typed put it as a string by default
         else {
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
           zDataProperty.setPackageName(dataProperty.getValue());
         }
@@ -441,18 +460,20 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
       action.dataPropertiesInSignature()
           .forEach(dataprop -> zDataProperty = new ZDataProperty(dataprop.getIRI()));
       if (action.toString() != null && !action.toString().isEmpty()) {
-        action.datatypesInSignature().forEach(datatype -> {          
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName(datatype.toString(), selectedCode, selectedLibrary);
+        action.datatypesInSignature().forEach(datatype -> {
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName(datatype.toString(), selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
-          zDataProperty.setPackageName(dataProperty.getValue());            
-      });
+          zDataProperty.setPackageName(dataProperty.getValue());
+        });
       }
       // if the range is not typed put it as a string by default
       else
-        action.datatypesInSignature().forEach(datatype -> {        
-          ZPair<String, String> dataProperty = XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
+        action.datatypesInSignature().forEach(datatype -> {
+          ZPair<String, String> dataProperty =
+              XsdTypeMapper.getClassName("xsd:string", selectedCode, selectedLibrary);
           zDataProperty.setRangeXSDType(dataProperty.getKey());
-          zDataProperty.setPackageName(dataProperty.getValue());             
+          zDataProperty.setPackageName(dataProperty.getValue());
         });
       zDataProperty.setValue(action.getObject().getLiteral());
       zInstance.add_DataProperty(zDataProperty);
@@ -474,8 +495,8 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
           mapIRI_to_Zinstance.put(iRI_IndividualCurrentOfObject, zInstanceOfCurrentObjectProp);
         }
 
-        
-        
+
+
         zObjectProperty.add_RangeZInstance(zInstanceOfCurrentObjectProp);
       }
       // Check if the object property legally fit the instance or not.
@@ -553,7 +574,7 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
 
   @Override
   public void visit(OWLObjectInverseOf ce) {
-    //System.out.println("OWLObjectOneOf: " + ce.toString());
+    // System.out.println("OWLObjectOneOf: " + ce.toString());
   }
 
   @Override
@@ -1000,7 +1021,7 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
       log.error(e.getMessage());
       throw e;
     }
-       
+
 
     IRI iri = objectProperty.asOWLObjectProperty().getIRI();
 
@@ -1008,8 +1029,10 @@ public class OLGAVisitor implements OWLObjectVisitor, OWLIndividualVisitor, OWLA
       ZObjectProperty zobjectProperty = new ZObjectProperty(iri);
 
       for (ZClass zclassRange : rangeList) {
-        if (zclassDomain.getZObjectPropertyItem(iri).parallelStream()
-            .filter(o -> o.getRangeListZClasses().parallelStream().allMatch(m->m.getKey().getIri().equals(zclassRange.getIri()))).count() == 0  ) {
+        if (zclassDomain
+            .getZObjectPropertyItem(iri).parallelStream().filter(o -> o.getRangeListZClasses()
+                .parallelStream().allMatch(m -> m.getKey().getIri().equals(zclassRange.getIri())))
+            .count() == 0) {
           zobjectProperty.add_RangeZClass(new ZPair<>(zclassRange, true));
           validateInverseRelation(zclassDomain, zobjectProperty, zclassRange);
         }

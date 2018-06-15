@@ -24,16 +24,11 @@
  */
 package semanticstore.ontology.library.generator.global;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,9 +43,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.apache.maven.model.Model;
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.semanticweb.owlapi.model.IRI;
 import antlr.Utils;
 import semanticstore.ontology.library.generator.exceptions.InvalidClassNameException;
@@ -59,6 +51,7 @@ import semanticstore.ontology.library.generator.model.ZClass;
 import semanticstore.ontology.library.generator.model.ZDataProperty;
 import semanticstore.ontology.library.generator.model.ZObjectProperty;
 import semanticstore.ontology.library.generator.model.ZPair;
+import semanticstore.ontology.library.generator.resources.ResourceManager;
 
 /**
  * UTILS is a class contains all of the static shared functions any class in OLGA will use.
@@ -157,37 +150,8 @@ public class UTILS {
    * @return the version string.
    */
 
-  // FIXME: this should not be read every time, refactor to read it once
-  @SuppressWarnings("resource")
-  public static String getOlgaVersion()
-      throws FileNotFoundException, IOException, XmlPullParserException {
-    String version = null;
-    MavenXpp3Reader reader = new MavenXpp3Reader();
-    Model model;
-    File pomFile = new File("pom.xml");
-    InputStream pomStream = new FileInputStream(pomFile);
-    try {      
-      if (!pomFile.exists()) {
-        pomStream = Utils.class.getClassLoader()
-            .getResourceAsStream("META-INF/maven/semanticstore/ontology-library-generator/pom.xml");
-      } 
-      try (BufferedReader pomReader =
-          new BufferedReader(new InputStreamReader(pomStream, StandardCharsets.UTF_8))) {
-        model = reader.read(pomReader);
-        version = model.getVersion();
-      }
-    } catch (IOException e) {
-      log.error(e.getMessage());
-      throw e;
-    } catch (NullPointerException e) {
-      log.error(e);
-      throw e;
-    } catch (XmlPullParserException e) {
-      log.error(e);
-      throw e;
-    } finally {
-      pomStream.close();
-    }
+  public static String getOlgaVersion() {
+    String version = ResourceManager.getResource("OLGAVersion");
     return version;
   }
 
@@ -493,6 +457,12 @@ public class UTILS {
     return packageName;
   }
 
+  /**
+   * If path is correct, and directory does not exist, creates a directory
+   * 
+   * @param path
+   * @return boolean
+   */
   public static boolean isPathValid(String path) {
     File file = new File(path);
     if ((file.exists() || file.mkdirs()) && file.canWrite()) {

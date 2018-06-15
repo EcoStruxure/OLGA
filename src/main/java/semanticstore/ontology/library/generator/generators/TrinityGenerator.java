@@ -1,18 +1,27 @@
 /*
--------------------------
-
-MIT License
-
-Copyright (c) 2018, Schneider Electric USA, Inc.    
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----------------------
-*/
+ * -------------------------
+ * 
+ * MIT License
+ * 
+ * Copyright (c) 2018, Schneider Electric USA, Inc.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+ * NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * ---------------------
+ */
 package semanticstore.ontology.library.generator.generators;
 
 import java.io.BufferedWriter;
@@ -24,6 +33,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,11 +47,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import javax.management.RuntimeErrorException;
+import org.apache.log4j.Logger;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.shared.invoker.MavenInvocationException;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.semanticweb.owlapi.model.IRI;
-import org.apache.log4j.Logger;
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.core.ParseException;
 import freemarker.template.Configuration;
@@ -74,7 +85,6 @@ public class TrinityGenerator implements Generator {
   private String outDirectoryPath;
   private Map<String, Object> dataToBeInject;
   private Map<IRI, ZClass> mapIRI_to_Zclass;
-  private List<String> listOfGeneratedClasses;
   private List<ZClass> listOfParentZClass;
   private List<String> listOfConsolidatedImports;
   private String path;
@@ -91,7 +101,6 @@ public class TrinityGenerator implements Generator {
 
   public TrinityGenerator() {
     dataToBeInject = new HashMap<>();
-    listOfGeneratedClasses = new ArrayList<String>();
     listOfParentZClass = new ArrayList<>();
     listOfConsolidatedImports = new ArrayList<>();
     generatePartial = false;
@@ -135,6 +144,12 @@ public class TrinityGenerator implements Generator {
     if (inputCmdParameters.get("out") != null
         && UTILS.isPathValid((String) inputCmdParameters.get("out"))) {
       this.outDirectoryPath = UTILS.rebuildPath((String) inputCmdParameters.get("out"));
+    } else {
+      Path currentRelativePath = Paths.get("");
+      String path = currentRelativePath.toAbsolutePath().toString() + CONFIG.GENERATED_LIBRARY;
+      if (UTILS.isPathValid(path)) {
+        this.outDirectoryPath = path;
+      }
     }
 
   }
@@ -152,7 +167,6 @@ public class TrinityGenerator implements Generator {
       RuntimeErrorException, MojoFailureException, NullPointerException {
     try {
       this.mapIRI_to_Zclass = mapIRI_to_Zclass;
-      listOfGeneratedClasses.clear();
 
       long start_millis_generation = System.currentTimeMillis();
       pomFilePath = this.outDirectoryPath + ontologyName + "-dotnetTrinity/";
@@ -163,21 +177,8 @@ public class TrinityGenerator implements Generator {
       generatePom();
 
       DateFormat dateFormatter = new SimpleDateFormat("mm:ss:SSS");
-      long end_millis_generation = System.currentTimeMillis();
-      Date generationTime = new Date(end_millis_generation - start_millis_generation);
-      String generationTimeString = dateFormatter.format(generationTime);
-      System.out.println("Code Generation Time (mm:ss:SSS): " + generationTimeString);
-
-      start_millis_generation = System.currentTimeMillis();
 
       generateDotNetProject();
-
-      end_millis_generation = System.currentTimeMillis();
-
-      generationTime = new Date(end_millis_generation - start_millis_generation);
-      generationTimeString = dateFormatter.format(generationTime);
-
-      System.out.println("Copying dotNet nuget dependencies (mm:ss:SSS): " + generationTimeString);
 
       String result;
       if (buildRepo != null && keyRepo != null) {
@@ -185,6 +186,10 @@ public class TrinityGenerator implements Generator {
       } else {
         result = OLGACompiler.maven_clean_install(pomFilePath);
       }
+      long end_millis_generation = System.currentTimeMillis();
+      Date generationTime = new Date(end_millis_generation - start_millis_generation);
+      String generationTimeString = dateFormatter.format(generationTime);
+      System.out.println("Code Generation Time (mm:ss:SSS): " + generationTimeString);
 
       return result;
     } catch (IOException | TemplateException | UnableToCompileGeneratedCodeException
@@ -250,7 +255,6 @@ public class TrinityGenerator implements Generator {
       dataToBeInject.put("ontologyVersion", ontologyVersion);
 
       // create File Directory for the code if does not exists already
-      addToListOfGeneratedClasses(path + "/", "I" + zclass.getzClassName());
       dataToBeInject.put("motherClassList", zclass.getListOfParentsToImplement());
       dataToBeInject.put("objectPropertyList", UTILS.pickObjectPropertiesForInterface(zclass));
       dataToBeInject.put("OLGAVersion", olgaVersion);
@@ -273,7 +277,6 @@ public class TrinityGenerator implements Generator {
 
       try (StringWriter out = new StringWriter()) {
         // prepare to generate the Class
-        addToListOfGeneratedClasses(path + File.separator, zclass.getzClassName());
         classTemplate = cfg.getTemplate(classTemplateName); // Load Interface template file
         File classFile = new File(
             generatedLibraryConfig + path + File.separator + zclass.getzClassName() + ".cs");
@@ -294,18 +297,6 @@ public class TrinityGenerator implements Generator {
           interfaceTemplate.process(dataToBeInject, writer); // Create interfaces
         }
 
-        /*
-         * if(!zclass.getListZInstanceIRI().isEmpty()) { //FIXME:
-         * ModelOptimizer.injectCardinalityAndRestrictionOfInstances(zclass,
-         * listObjectPropertiesToImplement, listDataPropertiesToImplement);
-         * 
-         * FileWriter instancefileWriter = new FileWriter( generatedLibraryConfig +
-         * path+"/InstancesOf"+zclass.getzClassName()+".cs"); addToListOfGeneratedClasses(path+"/",
-         * "InstancesOf"+zclass.getzClassName()); dataToBeInject.put("ZinstanceList",
-         * zclass.getListZInstanceIRI()); instanceTemplate = cfg.getTemplate(instanceTemplateName);
-         * instanceTemplate.process(dataToBeInject, instancefileWriter); instancefileWriter.close();
-         * }
-         */
         listOfParentZClass.clear();
         out.flush();
       } catch (NullPointerException | IOException | TemplateException e) {
@@ -338,7 +329,6 @@ public class TrinityGenerator implements Generator {
     dataToBeInject.put("version", ontologyVersion);
     dataToBeInject.put("dependency", cliDependency);
     dataToBeInject.put("ontologyVersion", ontologyVersion);
-    dataToBeInject.put("listOfGeneratedClasses", listOfGeneratedClasses);
 
     try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
         new FileOutputStream(pomFilePath + ontologyName.toLowerCase(Locale.ENGLISH) + ".csproj"),
@@ -349,24 +339,46 @@ public class TrinityGenerator implements Generator {
       throw e;
     }
 
+    copyDependencies();
+  }
+
+  protected void copyDependencies() throws IOException {
     try {
-      // directory = new File(pomFilePath+"OLGA/");
-      String ontologiesOut = pomFilePath + "Ontologies/";
-      if (UTILS.isPathValid(ontologiesOut)) {
-        UTILS.copyDirectory("Ontologies", "src/main/resources", ontologiesOut);
-        addToListOfGeneratedClasses("Ontologies/", "Ontologies.i");
+      String pathOut = pomFilePath + "Ontologies/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("Ontologies.i.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
       }
-
-      String oLGAOut = pomFilePath + "OLGA/";
-      if (UTILS.isPathValid(oLGAOut)) {
-        UTILS.copyDirectory("OLGA", CONFIG.OLGA_Dependencies, oLGAOut);
+      pathOut = pomFilePath + "Dependencies/Olga/Trinity/Resources/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("Glossary.Designer.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
+        UTILS.copyFiles("Glossary.resx", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
       }
-
+      pathOut = pomFilePath + "Olga/Resources/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("OlgaResources.properties", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
+      }
+      pathOut = pomFilePath + "Dependencies/Olga/Trinity/Exceptions/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("InvalidContextException.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
+      }
+      pathOut = pomFilePath + "Dependencies/Olga/Trinity/Attriubtes/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("QueryWithReasoningAttribute.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES,
+            pathOut);
+      }
+      pathOut = pomFilePath + "Dependencies/Olga/Trinity/";
+      if (UTILS.isPathValid(pathOut)) {
+        UTILS.copyFiles("ContextResource.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
+        UTILS.copyFiles("IRdfContext.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES, pathOut);
+        UTILS.copyFiles("ModelTypeReasonerInspector.cs", CONFIG.DOTNET_TRINITYRDF_TEMPLATES,
+            pathOut);
+      }
     } catch (FileNotFoundException | NullPointerException e1) {
       log.error(e1);
       throw e1;
     }
   }
+
 
   /**
    * Used to invoke the POM file generation process.
@@ -585,12 +597,5 @@ public class TrinityGenerator implements Generator {
   private void setFreeMarkerConfiguration(String templateSelectionConfig) throws IOException {
     cfg.setTemplateLoader(new ClassTemplateLoader(getClass(), templateSelectionConfig));
     cfg.setDefaultEncoding("UTF-8");
-  }
-
-  private void addToListOfGeneratedClasses(String path, String fileName) {
-    String classFileName = path.replace("/", "\\") + fileName + ".cs";
-    if (!listOfGeneratedClasses.contains(classFileName)) {
-      listOfGeneratedClasses.add(classFileName);
-    }
   }
 }

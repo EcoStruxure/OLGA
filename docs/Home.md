@@ -97,14 +97,15 @@ OLGA is developed by the following people:
 * [Charbel El Kaed](https://github.com/charbull) (Architect & Dev)
 * [Andre Ponnouradjane](https://github.com/ponnou) (Dev, 2017-2018)
 * [Alber Tadrous](https://github.com/AlberTadrous) (Dev)
-* [Farrukh Bek](https://github.com/farruhkv) (QA)
+* [Farruh Kuchimov](https://github.com/farruhkv) (QA)
 
 Those who contribute over time will be invited to join the project as developers.
 
 ### Contributors
 * [Mark Stemmler](https://github.com/DarthStem) for his advice regarding C# code generation along with his help with Trinity.
-* [SemioDesk](https://www.semiodesk.com/) Trinity team ([Sebastian](https://github.com/faubulous) and Moritz) for their development effort to extend Trinity in addition to their guidance and support.
+* [SemioDesk](https://www.semiodesk.com/) Trinity team ([Sebastian Faubel](https://github.com/faubulous) and [Moritz Eberl](https://github.com/meberl) for their development effort to extend Trinity in addition to their guidance and support.
 * Brett Leida for his valuable contribution in previous proof of concepts related to ontology development and how to improve developers experience.
+* Stephen Berard for his comments and reviews.
 
 ### How to cite this work
 ```

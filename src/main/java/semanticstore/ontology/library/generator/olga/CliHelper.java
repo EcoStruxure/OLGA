@@ -25,7 +25,6 @@
 package semanticstore.ontology.library.generator.olga;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -41,7 +40,6 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -172,16 +170,10 @@ public class CliHelper {
               } else {
                 ontologyVersion = (String) inputCmdParameters.get("ontVersion");
               }
-            } catch (OWLOntologyCreationException | FileNotFoundException
-                | XmlPullParserException e) {
+            } catch (OWLOntologyCreationException e) {
               log.error(e);
               log.error(e.getStackTrace().toString());
 
-              System.out.println(e.getMessage());
-              return;
-            } catch (IOException e) {
-              log.error(e);
-              log.error(e.getStackTrace().toString());
               System.out.println(e.getMessage());
               return;
             } catch (Exception e) {

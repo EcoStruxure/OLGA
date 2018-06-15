@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="main/java/semanticstore/ontology/library/generator/compiler/|main/java/semanticstore/ontology/library/generator/|main/java/semanticstore/ontology/library/|main/java/semanticstore/ontology/|main/java/semanticstore/|main/java/|main/java/|main/resources/|main/resources/|test/java/semanticstore/ontology/library/generator/code/generator/|test/java/semanticstore/ontology/library/generator/code/|test/java/semanticstore/ontology/library/generator/|test/java/semanticstore/ontology/library/generator/global/|test/java/semanticstore/ontology/library/generator/model/|test/java/semanticstore/ontology/library/generator/olga/|test/java/semanticstore/ontology/library/generator/visitor/|test/java/semanticstore/ontology/library/|test/java/semanticstore/ontology/|test/java/semanticstore/|test/java/|test/java/|test/resources/boc/|test/resources/brick/|test/resources/brickMerged/|test/resources/complexOntologies/|test/resources/complexOntologiesModified/|test/resources/neutral/|test/resources/ontologies4generatedCode/simple/|test/resources/PublicOntologies/|test/resources/PublicOntologies/bfo/|test/resources/PublicOntologies/knx/|test/resources/PublicOntologies/oneM2M_Base_Ontology/|test/resources/PublicOntologies/pizza/|test/resources/PublicOntologies/ssn/|test/resources/remi/|test/resources/saref/|test/resources/sarefImports/|test/resources/simple/|test/resources/testProperties/|test/resources/wpa/|test/resources/|test/resources/" including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

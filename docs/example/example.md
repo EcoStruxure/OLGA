@@ -75,7 +75,7 @@ Once the StoreFactory is configured, an `IModel` is used to create the instances
 
 The `InitContextInMemory()` function is provided below:
 ```csharp
-1: static string ns = "http://example.com/sample/";
+1: static string ns = "http://example.com/";
 2: static IModel context;
 3:        
 4: public static void InitContextInMemory()
