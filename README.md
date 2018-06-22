@@ -1,4 +1,5 @@
 [![Build Status](https://struxurewarecloud.visualstudio.com/_apis/public/build/definitions/05ca61f1-5a19-4a29-8b05-35664499dffe/490/badge)](https://struxurewarecloud.visualstudio.com/Digital%20Services%20Platform/_build/index?definitionId=490)
+[![GitHub stars](https://img.shields.io/github/stars/EcoStruxure/OLGA.svg)](https://github.com/EcoStruxure/OLGA/stargazers)
 [![HitCount](http://hits.dwyl.io/EcoStruxure/OLGA.svg)](http://hits.dwyl.io/EcoStruxure/OLGA)
 
 
