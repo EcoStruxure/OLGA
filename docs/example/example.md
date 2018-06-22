@@ -31,7 +31,7 @@ This library can be part of an IoT application, embedded in a commissioning tool
 First, retrieve the [ExampleDemoOntology.owl](https://github.com/EcoStruxure/OLGA/blob/master/docs/example/ExampleDemoOntology.owl) and generate a library to a given ${Path Of Your Choice}:
 
 ```console
-java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name DemoExample --path .../ExampleDemoOntology.owl --out ${Path Of Your Choice}
+java -jar target\OLGA-0.0.3-with-dependencies.jar --code cs --library trinity --name DemoExample --path docs/example/ExampleDemoOntology.owl --out ${Path Of Your Choice}
 ```
 
 The following sections will go through the steps need to instantiate an ontology, persist it and query it.
