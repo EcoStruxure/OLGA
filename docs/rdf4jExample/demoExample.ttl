@@ -1,0 +1,41 @@
+<http://www.example.com#f1> a <http://www.example.com/Floor>, <http://www.example.com/PhysicalLocation>;
+  <http://www.example.com/hasName> "floor 1" .
+
+<http://www.example.com#f2> a <http://www.example.com/Floor>, <http://www.example.com/PhysicalLocation>;
+  <http://www.example.com/hasName> "floor 2" .
+
+<http://www.example.com#b1> a <http://www.example.com/Building>, <http://www.example.com/PhysicalLocation>;
+  <http://www.example.com/hasDescription> "North face Building";
+  <http://www.example.com/hasFloor> <http://www.example.com#f1>, <http://www.example.com#f2>;
+  <http://www.example.com/hasName> "b1" .
+
+<http://www.example.com#t1> a <http://www.example.com/Measurement>, <http://www.example.com/Temperature>;
+  <http://www.example.com/hasDescription> "this is indoor temperature";
+  <http://www.example.com/hasName> "temp1";
+  <http://www.example.com/hasTimeStamp> "2018-10-02T15:47:08.884-04:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://www.example.com/hasUnitOfMeasure> <http://www.example.com#Celsius>;
+  <http://www.example.com/hasValue> "32.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<http://www.example.com#Celsius> a <http://www.example.com/TemperatureUnit>, <http://www.example.com/UnitOfMeasure> .
+
+<http://www.example.com#s1> a <http://www.example.com/Node>, <http://www.example.com/Sensor>;
+  <http://www.example.com/hasDescription> "This is sensor s1";
+  <http://www.example.com/hasName> "TempSensor1";
+  <http://www.example.com/hasPhysicalLocation> <http://www.example.com#f1>;
+  <http://www.example.com/measures> <http://www.example.com#t1> .
+
+<http://www.example.com#h1> a <http://www.example.com/Humidity>, <http://www.example.com/Measurement>;
+  <http://www.example.com/hasDescription> "this is indoor humidity";
+  <http://www.example.com/hasName> "h1";
+  <http://www.example.com/hasTimeStamp> "2018-10-02T15:47:08.904-04:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://www.example.com/hasUnitOfMeasure> <http://www.example.com#relativeHumidity>;
+  <http://www.example.com/hasValue> "64.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<http://www.example.com#relativeHumidity> a <http://www.example.com/HumidityUnit>,
+    <http://www.example.com/UnitOfMeasure> .
+
+<http://www.example.com#hum1> a <http://www.example.com/Node>, <http://www.example.com/Sensor>;
+  <http://www.example.com/hasDescription> "This is humidity sensor 1";
+  <http://www.example.com/hasName> "hum1";
+  <http://www.example.com/hasPhysicalLocation> <http://www.example.com#f2>;
+  <http://www.example.com/measures> <http://www.example.com#h1> .
