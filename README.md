@@ -32,6 +32,12 @@ To get started with OLGA, please check the following resources:
 
 * [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
 
-* [Hello World](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example to get you started
+* [Hello World C#](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example in C# (the most advanced in features) to get you started
+
+* [Hello World Java](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Java-RDF4J)) - a hello world example in Java
+
+* [Hello World Python](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Python-RDFAlchemy)) - a hello world example in Python
 
 * [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/Developer-Guide) - how to extend OLGA
+
+* [Webservice User Guide] (https://github.com/EcoStruxure/OLGA/wiki/Webservice-User-Guide) - how to use OLGA through a WebService
