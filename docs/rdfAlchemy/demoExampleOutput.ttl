@@ -28,6 +28,7 @@
     ns1:UnitOfMeasureHumidityUnit ( <http://www.example.com/ex/> ) ;
     ns1:hasDescription "this is indoor humidity" ;
     ns1:hasName "h1" ;
+    ns1:hasTimeStamp "2018-10-05 15:54:37" ;
     ns1:hasValue 64 .
 
 <http://www.example.com/ex/f2> a ns1:Floor ;
@@ -37,6 +38,7 @@
     ns1:UnitOfMeasureTemperatureUnit ( <http://www.example.com/ex/Celsius> ) ;
     ns1:hasDescription "this is indoor temperature" ;
     ns1:hasName "temp1" ;
+    ns1:hasTimeStamp "2018-10-05 15:54:37" ;
     ns1:hasValue 32 .
 
 <http://www.example.com/ex/f1> a ns1:Floor ;
