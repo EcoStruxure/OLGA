@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "88bef857-5a24-4a55-9a79-56180b5b7d06",
+		"name": "OLGA As A Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local Test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\r\n<rdf:RDF xmlns=\"http://www.simple.com#\"\r\n     xml:base=\"http://www.simple.com\"\r\n     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\r\n     xmlns:owl=\"http://www.w3.org/2002/07/owl#\"\r\n     xmlns:www=\"http://www.simple.com#\"\r\n     xmlns:xml=\"http://www.w3.org/XML/1998/namespace\"\r\n     xmlns:owl2xml=\"http://www.w3.org/2006/12/owl2-xml#\"\r\n     xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\"\r\n     xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">\r\n    <owl:Ontology rdf:about=\"http://www.simple.com\">\r\n        <rdfs:comment>Test Ontology aim to make sure the inheritence is propagated</rdfs:comment>\r\n    </owl:Ontology>\r\n    \r\n\r\n\r\n    <!-- \r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n    //\r\n    // Object Properties\r\n    //\r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n     -->\r\n\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasFloor -->\r\n\r\n    <owl:ObjectProperty rdf:about=\"http://www.simple.com#hasFloor\">\r\n        <rdfs:comment>Depends on Building class.</rdfs:comment>\r\n    </owl:ObjectProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasRoom -->\r\n\r\n    <owl:ObjectProperty rdf:about=\"http://www.simple.com#hasRoom\">\r\n        <rdfs:comment>shows room number or location.</rdfs:comment>\r\n    </owl:ObjectProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasSensor -->\r\n\r\n    <owl:ObjectProperty rdf:about=\"http://www.simple.com#hasSensor\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#isLocatedInBuilding -->\r\n\r\n    <owl:ObjectProperty rdf:about=\"http://www.simple.com#isLocatedInBuilding\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#isLocatedInFloor -->\r\n\r\n    <owl:ObjectProperty rdf:about=\"http://www.simple.com#isLocatedInFloor\"/>\r\n    \r\n\r\n\r\n    <!-- \r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n    //\r\n    // Data properties\r\n    //\r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n     -->\r\n\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasBuildingAccronyme -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasBuildingAccronyme\">\r\n        <rdfs:comment>shows building property.</rdfs:comment>\r\n    </owl:DatatypeProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasCoordinates -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasCoordinates\">\r\n        <rdfs:comment>Coordinator $</rdfs:comment>\r\n    </owl:DatatypeProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasFloorAccronym -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasFloorAccronym\">\r\n        <rdfs:comment xml:lang=\"uzbek\">Yaxshilab tekshirish kerak. G&apos;ayrat qil!</rdfs:comment>\r\n    </owl:DatatypeProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasID -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasID\">\r\n        <rdfs:subPropertyOf rdf:resource=\"http://www.simple.com#hasFloorAccronym\"/>\r\n    </owl:DatatypeProperty>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasItemName -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasItemName\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasName -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasName\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#hasRoomAccronyme -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#hasRoomAccronyme\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#monitors -->\r\n\r\n    <owl:DatatypeProperty rdf:about=\"http://www.simple.com#monitors\"/>\r\n    \r\n\r\n\r\n    <!-- \r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n    //\r\n    // Classes\r\n    //\r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n     -->\r\n\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#Building -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#Building\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#MonitorableItem\"/>\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#PhysicalLocation\"/>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasFloor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#Floor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#EnergySensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#TemperatureSensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasBuildingAccronyme\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:comment>testing comments in different classes.</rdfs:comment>\r\n        <rdfs:label xml:lang=\"fr\">Batiment</rdfs:label>\r\n        <rdfs:label xml:lang=\"ar\">mabna</rdfs:label>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#CopyRoom -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#CopyRoom\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#PhysicalLocation\"/>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#TemperatureSensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#EnergySensor -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#EnergySensor\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#Sensor\"/>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#Floor -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#Floor\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#PhysicalLocation\"/>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasRoom\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#CopyRoom\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasRoom\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#Room\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#isLocatedInBuilding\"/>\r\n                <owl:maxQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</owl:maxQualifiedCardinality>\r\n                <owl:onClass rdf:resource=\"http://www.simple.com#Building\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasFloorAccronym\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#LocationItem -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#LocationItem\">\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasCoordinates\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:comment>Parent Class of the classes.</rdfs:comment>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#MonitorableItem -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#MonitorableItem\">\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#Sensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasItemName\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#monitors\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#PhysicalLocation -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#PhysicalLocation\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#LocationItem\"/>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasID\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#integer\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasName\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:comment>Shows actual location xxxx.</rdfs:comment>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#Room -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#Room\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#PhysicalLocation\"/>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#EnergySensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasSensor\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.simple.com#TemperatureSensor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#isLocatedInFloor\"/>\r\n                <owl:qualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</owl:qualifiedCardinality>\r\n                <owl:onClass rdf:resource=\"http://www.simple.com#Floor\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n        <rdfs:subClassOf>\r\n            <owl:Restriction>\r\n                <owl:onProperty rdf:resource=\"http://www.simple.com#hasRoomAccronyme\"/>\r\n                <owl:someValuesFrom rdf:resource=\"http://www.w3.org/2001/XMLSchema#string\"/>\r\n            </owl:Restriction>\r\n        </rdfs:subClassOf>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#Sensor -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#Sensor\"/>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#TemperatureSensor -->\r\n\r\n    <owl:Class rdf:about=\"http://www.simple.com#TemperatureSensor\">\r\n        <rdfs:subClassOf rdf:resource=\"http://www.simple.com#Sensor\"/>\r\n    </owl:Class>\r\n    \r\n\r\n\r\n    <!-- \r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n    //\r\n    // Individuals\r\n    //\r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n     -->\r\n\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#BostonOneCampus -->\r\n\r\n    <owl:Thing rdf:about=\"http://www.simple.com#BostonOneCampus\">\r\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#NamedIndividual\"/>\r\n        <rdf:type rdf:resource=\"http://www.simple.com#Building\"/>\r\n        <rdfs:comment xml:lang=\"en\">The Boston One Campus Building comment</rdfs:comment>\r\n    </owl:Thing>\r\n    \r\n\r\n\r\n    <!-- http://www.simple.com#room1 -->\r\n\r\n    <owl:Thing rdf:about=\"http://www.simple.com#room1\">\r\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#NamedIndividual\"/>\r\n        <rdf:type rdf:resource=\"http://www.simple.com#Room\"/>\r\n        <rdfs:comment xml:lang=\"fr\">C&apos;est une chambre bien éclairée</rdfs:comment>\r\n    </owl:Thing>\r\n    \r\n\r\n\r\n    <!-- \r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n    //\r\n    // General axioms\r\n    //\r\n    ///////////////////////////////////////////////////////////////////////////////////////\r\n     -->\r\n\r\n    <rdf:Description>\r\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#AllDisjointClasses\"/>\r\n        <owl:members rdf:parseType=\"Collection\">\r\n            <rdf:Description rdf:about=\"http://www.simple.com#Building\"/>\r\n            <rdf:Description rdf:about=\"http://www.simple.com#Floor\"/>\r\n            <rdf:Description rdf:about=\"http://www.simple.com#Room\"/>\r\n        </owl:members>\r\n    </rdf:Description>\r\n</rdf:RDF>\r\n\r\n\r\n\r\n<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Ontology/OLGAsaas/1.0.0/1.0/generate?code=cs&name=simple&library=trinity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Ontology",
+						"OLGAsaas",
+						"1.0.0",
+						"1.0",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "cs"
+						},
+						{
+							"key": "name",
+							"value": "simple"
+						},
+						{
+							"key": "library",
+							"value": "trinity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin collect",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/zip"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/Ontology/OLGAsaas/1.0.0/1.0/admin/collectlogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Ontology",
+						"OLGAsaas",
+						"1.0.0",
+						"1.0",
+						"admin",
+						"collectlogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin clear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
