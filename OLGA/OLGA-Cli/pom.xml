@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>semanticstore.ontology.library.generator</groupId>
+		<artifactId>OLGA</artifactId>
+		<version>0.0.4</version>
+	</parent>
+	<artifactId>OLGA-Cli</artifactId>
+	<name>OLGA-Cli</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log.version>1.5.6</log.version>
+		<log4j.version>1.2.17</log4j.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>semanticstore.ontology.library.generator</groupId>
+			<artifactId>OLGA-Core</artifactId>
+			<version>0.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${log.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${log.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>${log.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<manifest>
+						<mainClass>semanticstore.ontology.library.generator.olga.OLGA</mainClass>
+					</manifest>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/assembly/assembly.xml</descriptor>
+					</descriptors>
+					<archive>
+						<manifest>
+							<mainClass>semanticstore.ontology.library.generator.olga.OLGA</mainClass>
+						</manifest>
+					</archive>
+					<useTransitiveFiltering>true</useTransitiveFiltering>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.jacoco</groupId> <artifactId>jacoco-maven-plugin</artifactId> 
+				<version>0.8.1</version> <configuration> <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile> 
+				<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile> 
+				</configuration> <executions> <execution> <id>jacoco-initialize</id> <goals> 
+				<goal>prepare-agent</goal> </goals> </execution> <execution> <id>jacoco-site</id> 
+				<phase>package</phase> <goals> <goal>report</goal> </goals> </execution> 
+				</executions> </plugin> -->
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+				<executions>
+					<execution>
+						<id>attach-descriptor</id>
+						<goals>
+							<goal>attach-descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20.1</version>
+				<configuration>
+					<forkMode>once</forkMode>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
