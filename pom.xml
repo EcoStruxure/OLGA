@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <!-- Used for the Continous Integration Build Only, please go to OLGA/OLGA and execute mvn there for build -->
+ <modelVersion>4.0.0</modelVersion>
+  <groupId>semanticstore.ontology.library.generator</groupId>
+  <artifactId>OLGA</artifactId>
+  <version>0.0.4</version>
+  <packaging>pom</packaging>
+  <name>OLGA</name>
+  
+  <modules>
+    <module>OLGA-Core</module>
+    <module>OLG-Cli</module>
+    <module>OLGA-Ws</module>
+  </modules>
+
+</project>
