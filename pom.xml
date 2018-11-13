@@ -14,6 +14,13 @@ The generated library is then imported and used to programmatically to:
 
 Generate an ontology instance conform to the ontology model.
 Query the generated ontology instance by relying on Object Oriented Classes.</description>
+ <licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+ 
   <modules>
     <module>OLGA-Core</module>
     <module>OLG-Cli</module>
