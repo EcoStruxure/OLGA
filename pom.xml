@@ -7,7 +7,7 @@
   <version>0.0.4</version>
   <packaging>pom</packaging>
   <name>OLGA</name>
-  
+  <url>https://github.com/EcoStruxure/OLGA</url>
   <modules>
     <module>OLGA-Core</module>
     <module>OLG-Cli</module>
