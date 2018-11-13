@@ -25,6 +25,11 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
+	 <scm>
+	  <connection>scm:git:git://github.com/EcoStruxure/OLGA/tree/master/OLGA/OLGA-Cli.git</connection>
+	  <developerConnection>scm:git:ssh://github.com:EcoStruxure/OLGA/tree/master/OLGA/OLGA-Cli.git</developerConnection>
+	  <url>https://github.com/EcoStruxure//OLGA/tree/master/OLGA/OLGA-Cli</url>
+  	 </scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log.version>1.5.6</log.version>
