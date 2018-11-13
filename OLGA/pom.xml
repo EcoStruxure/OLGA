@@ -6,7 +6,12 @@
   <version>0.0.4</version>
   <packaging>pom</packaging>
   <name>OLGA</name>
-  
+  <description>OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards (RDF, OWL) and generating a library conform to the ontology model.
+
+The generated library is then imported and used to programmatically to:
+
+Generate an ontology instance conform to the ontology model.
+Query the generated ontology instance by relying on Object Oriented Classes.</description>
   <modules>
     <module>OLGA-Core</module>
     <module>OLGA-Cli</module>
