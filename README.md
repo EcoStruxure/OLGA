@@ -40,4 +40,4 @@ To get started with OLGA, please check the following resources:
 
 * [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/Developer-Guide) - how to extend OLGA
 
-* [Webservice User Guide] (https://github.com/EcoStruxure/OLGA/wiki/Webservice-User-Guide) - how to use OLGA through a WebService
+* [Webservice User Guide](https://github.com/EcoStruxure/OLGA/wiki/Webservice-User-Guide) - how to use OLGA through a WebService
