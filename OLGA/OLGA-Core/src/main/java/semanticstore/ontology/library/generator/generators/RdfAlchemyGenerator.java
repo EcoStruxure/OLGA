@@ -95,7 +95,7 @@ public class RdfAlchemyGenerator extends AbstractGenerator {
 
     for (Entry<IRI, ZClass> entry : mapIRI_to_Zclass.entrySet()) {
       ZClass zclass = entry.getValue(); // Get ZClass
-
+      if(zclass.getGenerate()==true) {
       // user request to preserve the path or not
       if (preserveNameSpaceOfOntology) {
         path = zclass.getPath();
@@ -170,6 +170,7 @@ public class RdfAlchemyGenerator extends AbstractGenerator {
         log.error(e);
         throw e;
       }
+    }
     }
   }
 

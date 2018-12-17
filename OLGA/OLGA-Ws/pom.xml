@@ -18,7 +18,7 @@ The generated library is then imported and used to programmatically to:
 
 Generate an ontology instance conform to the ontology model.
 Query the generated ontology instance by relying on Object Oriented Classes.</description>
-	<licenses>
+<licenses>
 		<license>
 			<name>MIT License</name>
 			<url>http://www.opensource.org/licenses/mit-license.php</url>
@@ -36,7 +36,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<springfox-version>2.7.0</springfox-version>
 		<OLGA-version>0.0.4</OLGA-version>    
-		<log.version>1.7.7</log.version>
+		<log.version>1.6.6</log.version>
 		<log4j.version>1.2.17</log4j.version>		
   </properties>
 
@@ -117,7 +117,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
   <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-jdk14</artifactId>
-      <version>1.7.7</version>
+      <version>${log.version}</version>
   </dependency>
 	</dependencies>
 	<build>

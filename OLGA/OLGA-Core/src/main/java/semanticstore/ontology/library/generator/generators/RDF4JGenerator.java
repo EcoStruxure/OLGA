@@ -97,6 +97,7 @@ public class RDF4JGenerator extends AbstractGenerator {
 
     for (Entry<IRI, ZClass> entry : mapIRI_to_Zclass.entrySet()) {
       ZClass zclass = entry.getValue(); // Get ZClass
+      if(zclass.getGenerate()==true) {
        ZClass bestMotherToExtend = zclass.getParentToExtend();
 
       // user request to preserve the path or not
@@ -165,6 +166,7 @@ public class RDF4JGenerator extends AbstractGenerator {
         log.error(e);
         throw e;
       }
+    }
     }
   }
 

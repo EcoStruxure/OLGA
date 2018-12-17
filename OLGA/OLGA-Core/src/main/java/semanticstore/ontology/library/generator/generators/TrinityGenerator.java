@@ -116,8 +116,9 @@ public class TrinityGenerator extends AbstractGenerator {
       throw e;
     }
 
-    for (Entry<IRI, ZClass> entry : mapIRI_to_Zclass.entrySet()) {
+    for (Entry<IRI, ZClass> entry : mapIRI_to_Zclass.entrySet()) {    	
       ZClass zclass = entry.getValue(); // Get ZClass
+      if(zclass.getGenerate()==true) {
       ZClass bestMotherToExtend = zclass.getParentToExtend();
 
       // user request to preserve the path or not
@@ -192,6 +193,7 @@ public class TrinityGenerator extends AbstractGenerator {
         log.error(e);
         throw e;
       }
+    }
     }
   }
 
