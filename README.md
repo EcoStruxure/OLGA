@@ -25,6 +25,45 @@ The generated library is then imported and used to programmatically to:
 OLGA is licensed under the [MIT License](./LICENSE.TXT).
 Schneider Electric requests contributions to be provided back to benefit the community.
 
+## Docker
+
+You can build a docker image for hosting the OLGA web service.
+
+To build a new image, run the following command:
+
+```
+$ ./build-docker-image.sh
+```
+
+There are various environment variable you can set for the build script:
+
+|Environment Variable|Default Value|Description|
+|---|---|---|
+|OLGA_REPO_URL|https://github.com/EcoStruxure/OLGA.git|OLGA Source Code Repo|
+|OLGA_PROJECT_NAME|OLGA|Project name, used by the Dockerfile to generate artifact paths|
+|OLGA_SUBPROJECTS|OLGA-Core,OLGA-Ws|What subprojects we want to build|
+|OLGA_ARTIFACT_ID|OLGA-Ws|Maven Artifact ID, used by Dockerfile to generate artifact paths|
+|OLGA_VERSION|0.0.4|OLGA Version|
+|OLGA_DOCKER_TAG|ecostruxure/olga:latest|Docker tag for image|
+
+**N.B.** the build script skips the tests.
+
+To run the resulting image, run the following command:
+
+```
+$ ./docker-run.sh
+```
+
+There is a environment variable you can set for the run script:
+
+|Environment Variable|Default Value|Description|
+|---|---|---|
+|OLGA_DOCKER_TAG|ecostruxure/olga:latest|Docker tag for image|
+
+You can access the web service at `http://localhost:9090`
+
+An additional script, `docker-cleanup.sh` is included to cleanup intermediate docker images created by the build script.
+
 ## Getting Started
 To get started with OLGA, please check the following resources:
 
