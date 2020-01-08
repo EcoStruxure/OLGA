@@ -16,6 +16,6 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Semiodesk.Trinity" Version="1.0.0-rc006" />
+    <PackageReference Include="Semiodesk.Trinity" Version="1.0.*" />
   </ItemGroup>
 </Project>
