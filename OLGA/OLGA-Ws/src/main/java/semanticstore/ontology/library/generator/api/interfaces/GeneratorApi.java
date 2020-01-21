@@ -46,8 +46,8 @@ public interface GeneratorApi {
 
   @ApiOperation(value = "Requests Generation of Code based on an ontology model",
       nickname = "generate",
-      notes = "By passing in the appropriate options, you can generate a library fr CSharp, Java or Python om your ontology model",
-      response = byte[].class, tags = {"users",})
+      notes = "By passing in the appropriate options, you can generate a library for CSharp, Java or Python of your ontology model",
+      response = byte[].class)
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "OLGA Generated Llibrary Successfully",
           response = byte[].class),
