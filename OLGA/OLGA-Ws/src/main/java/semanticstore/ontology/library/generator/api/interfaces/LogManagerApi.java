@@ -36,15 +36,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface LogManagerApi {
 
   @ApiOperation(value = "Requests deleting OLGA logs", nickname = "clearlogs",
-      notes = "By calling this method OLGA clears the logs", tags = {"users",})
+      notes = "By calling this method OLGA clears the logs")
   @ApiResponses(value = {@ApiResponse(code = 200, message = "OLGA clears the logs successfully"),
       @ApiResponse(code = 400, message = "Failled to clear logs")})
   @RequestMapping(value = "clearlogs", method = RequestMethod.GET)
   void clearlogs(HttpServletResponse response);
 
   @ApiOperation(value = "Requests OLGA log files zipped", nickname = "collectlogs",
-      notes = "By calling this method OLGA returns the log files zipped", response = byte[].class,
-      tags = {"users",})
+      notes = "By calling this method OLGA returns the log files zipped", response = byte[].class)
   @ApiResponses(
       value = {
           @ApiResponse(code = 200, message = "OLGA zipped and collected the log file successfully",
