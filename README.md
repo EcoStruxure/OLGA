@@ -40,6 +40,7 @@ There are various environment variable you can set for the build script:
 |Environment Variable|Default Value|Description|
 |---|---|---|
 |OLGA_REPO_URL|https://github.com/EcoStruxure/OLGA.git|OLGA Source Code Repo|
+|OLGA_GIT_BRANCH|master|Git branch in source repo to use when cloning OLGA repo|
 |OLGA_PROJECT_NAME|OLGA|Project name, used by the Dockerfile to generate artifact paths|
 |OLGA_SUBPROJECTS|OLGA-Core,OLGA-Ws|What subprojects we want to build|
 |OLGA_ARTIFACT_ID|OLGA-Ws|Maven Artifact ID, used by Dockerfile to generate artifact paths|

@@ -1,7 +1,8 @@
 FROM alpine/git as clone
 ARG url
+ARG branch
 WORKDIR /app
-RUN git clone ${url}
+RUN git clone -b ${branch} --single-branch ${url}
 
 FROM maven:3.5-jdk-8-alpine as build
 ARG project
