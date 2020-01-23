@@ -44,7 +44,7 @@ There are various environment variable you can set for the build script:
 |OLGA_PROJECT_NAME|OLGA|Project name, used by the Dockerfile to generate artifact paths|
 |OLGA_SUBPROJECTS|OLGA-Core,OLGA-Ws|What subprojects we want to build|
 |OLGA_ARTIFACT_ID|OLGA-Ws|Maven Artifact ID, used by Dockerfile to generate artifact paths|
-|OLGA_VERSION|0.0.4|OLGA Version|
+|OLGA_VERSION|0.0.5|OLGA Version|
 |OLGA_DOCKER_TAG|ecostruxure/olga:latest|Docker tag for image|
 
 **N.B.** the build script skips the tests.

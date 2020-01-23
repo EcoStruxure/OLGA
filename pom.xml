@@ -4,7 +4,7 @@
  <modelVersion>4.0.0</modelVersion>
   <groupId>semanticstore.ontology.library.generator</groupId>
   <artifactId>OLGA</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
   <packaging>pom</packaging>
   <name>OLGA</name>
   <url>https://github.com/EcoStruxure/OLGA</url>

@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>semanticstore.ontology.library.generator</groupId>
 		<artifactId>OLGA</artifactId>
-		<version>0.0.4</version>
+		<version>0.0.5</version>
 	</parent>
 	<artifactId>OLGA-Cli</artifactId>
 	<name>OLGA-Cli</name>
@@ -32,7 +32,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
   </scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<log.version>1.6.6</log.version>
+		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
@@ -40,7 +40,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<dependency>
 			<groupId>semanticstore.ontology.library.generator</groupId>
 			<artifactId>OLGA-Core</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
