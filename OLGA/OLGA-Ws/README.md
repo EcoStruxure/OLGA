@@ -13,6 +13,6 @@ The underlying library integrating swagger to SpringBoot is [springfox](https://
 Start your server as an simple java application
 
 You can view the api documentation in swagger-ui by pointing to
-http://localhost:9090/
+http://localhost:9090/Ontology/OLGAsaas/1.0.0/1.0/
 
 Change default port value in application.properties
