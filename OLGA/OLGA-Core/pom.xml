@@ -6,7 +6,7 @@
   <parent>
     <groupId>semanticstore.ontology.library.generator</groupId>
     <artifactId>OLGA</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
   </parent>  
   <artifactId>OLGA-Core</artifactId>
   <name>OLGA-Core</name>
@@ -30,7 +30,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<owlapi.version>5.1.5</owlapi.version>
+		<owlapi.version>5.1.12</owlapi.version>
 		<freemarker.version>2.3.28</freemarker.version>
 		<commons-cli.version>1.4</commons-cli.version>
 		<commons-text.version>1.1</commons-text.version>
@@ -39,7 +39,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<maven-model.version>3.3.9</maven-model.version>
 		<org.atteo.version>1.2.2</org.atteo.version>
 		<junit.version>4.12</junit.version>
-		<log.version>1.6.6</log.version>
+		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>
   </properties>  
   <build>
@@ -207,6 +207,10 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 				<exclusion>
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-nop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-jdk14</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>

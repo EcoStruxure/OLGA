@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>semanticstore.ontology.library.generator</groupId>
 		<artifactId>OLGA</artifactId>
-		<version>0.0.4</version>
+		<version>0.0.5</version>
 	</parent>
 	<artifactId>OLGA-Ws</artifactId>
 	<name>OLGA-Ws</name>
@@ -35,8 +35,8 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<springfox-version>2.7.0</springfox-version>
-		<OLGA-version>0.0.4</OLGA-version>    
-		<log.version>1.6.6</log.version>
+		<OLGA-version>0.0.5</OLGA-version>    
+		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>		
   </properties>
 
