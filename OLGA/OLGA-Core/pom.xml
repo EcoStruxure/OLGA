@@ -165,7 +165,8 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.20.1</version>
 				 <configuration>               
-                	<forkMode>once</forkMode>
+					<reuseForks>false</reuseForks>
+					<forkCount>1</forkCount>
             	 </configuration>
 			</plugin>
 		</plugins>
