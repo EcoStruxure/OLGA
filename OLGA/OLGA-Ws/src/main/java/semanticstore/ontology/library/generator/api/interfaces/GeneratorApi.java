@@ -53,7 +53,7 @@ public interface GeneratorApi {
           response = byte[].class),
       @ApiResponse(code = 400, message = "invalid input, object invalid")})
   @RequestMapping(method = RequestMethod.POST, produces = "application/zip",
-      consumes = "application/xml")
+      consumes = { "application/xml","application/rdf+xml","application/x-turtle","text/turtle" })
   public byte[] generate(@RequestParam(value = "code", required = true) String code,
       @RequestParam(value = "name", required = true) String name,
       @RequestParam(value = "library", required = true) String library,
