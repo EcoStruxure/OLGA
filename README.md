@@ -25,6 +25,24 @@ The generated library is then imported and used to programmatically to:
 OLGA is licensed under the [MIT License](./LICENSE.TXT).
 Schneider Electric requests contributions to be provided back to benefit the community.
 
+## Getting Started
+To get started with OLGA, please check the following resources:
+
+* [Home](https://github.com/EcoStruxure/OLGA/wiki/Home) - general information about OLGA and its supported features
+
+* [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
+
+* [Hello World C#](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example in C# (the most advanced in features) to get you started
+
+* [Hello World Java](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Java-RDF4J)) - a hello world example in Java
+
+* [Hello World Python](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Python-RDFAlchemy)) - a hello world example in Python
+
+* [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/Developer-Guide) - how to extend OLGA
+
+* [Webservice User Guide](https://github.com/EcoStruxure/OLGA/wiki/Webservice-User-Guide) - how to use OLGA through a WebService
+
+
 ## Docker
 
 You can build a docker image for hosting the OLGA web service.
@@ -64,20 +82,3 @@ There is a environment variable you can set for the run script:
 You can access the web service at `http://localhost:9090`
 
 An additional script, `docker-cleanup.sh` is included to cleanup intermediate docker images created by the build script.
-
-## Getting Started
-To get started with OLGA, please check the following resources:
-
-* [Home](https://github.com/EcoStruxure/OLGA/wiki/Home) - general information about OLGA and its supported features
-
-* [User Guide](https://github.com/EcoStruxure/OLGA/wiki/User-Guide) - how to use various features of the library
-
-* [Hello World C#](https://github.com/EcoStruxure/OLGA/wiki/Hello-World) - a hello world example in C# (the most advanced in features) to get you started
-
-* [Hello World Java](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Java-RDF4J)) - a hello world example in Java
-
-* [Hello World Python](https://github.com/EcoStruxure/OLGA/wiki/Hello-World-(Python-RDFAlchemy)) - a hello world example in Python
-
-* [Developer Guide](https://github.com/EcoStruxure/OLGA/wiki/Developer-Guide) - how to extend OLGA
-
-* [Webservice User Guide](https://github.com/EcoStruxure/OLGA/wiki/Webservice-User-Guide) - how to use OLGA through a WebService
