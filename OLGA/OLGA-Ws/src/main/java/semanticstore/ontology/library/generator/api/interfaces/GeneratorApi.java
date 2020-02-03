@@ -31,13 +31,14 @@
 package semanticstore.ontology.library.generator.api.interfaces;
 
 import io.swagger.annotations.*;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.annotation.Generated;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 @Generated(value = "io.swagger.codegen.languages.java.SpringCodegen",
     date = "2018-08-08T17:06:42.836-04:00[America/New_York]")
@@ -49,11 +50,10 @@ public interface GeneratorApi {
       notes = "By passing in the appropriate options, you can generate a library for CSharp, Java or Python of your ontology model",
       response = byte[].class)
   @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "OLGA Generated Llibrary Successfully",
+      @ApiResponse(code = 200, message = "OLGA Generated Library Successfully",
           response = byte[].class),
       @ApiResponse(code = 400, message = "invalid input, object invalid")})
-  @RequestMapping(method = RequestMethod.POST, produces = "application/zip",
-      consumes = { "application/xml","application/rdf+xml","application/x-turtle","text/turtle" })
+  @RequestMapping(method = RequestMethod.POST, produces = "application/zip", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
   public byte[] generate(@RequestParam(value = "code", required = true) String code,
       @RequestParam(value = "name", required = true) String name,
       @RequestParam(value = "library", required = true) String library,
@@ -62,6 +62,6 @@ public interface GeneratorApi {
       @RequestParam(value = "partial", required = false, defaultValue = "false") String partial,
       @RequestParam(value = "skipCompile", required = false,
           defaultValue = "false") boolean skipCompile,
-      @ApiParam(value = "OLGA input parameters") @Valid @RequestBody String body,
+      @RequestParam(value = "file", required = true) MultipartFile file,
       HttpServletResponse response) throws Exception;
 }

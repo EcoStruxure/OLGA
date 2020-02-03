@@ -24,20 +24,18 @@
  */
 package org.OLGA.Ws.Generator.Options;
 
-import static org.mockito.Mockito.*;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +52,9 @@ import semanticstore.ontology.library.generator.global.CODE;
 import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.service.OlgaService;
 import semanticstore.ontology.library.generator.utils.Utils;
+
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -91,7 +91,7 @@ public class SkipCompileOptionTest {
           .param("library", "trinity").contentType("application/xml")
           .content(new String(
               Files.readAllBytes(Paths.get(this.getClass().getResource("/simple.owl").toURI())),
-              "utf-8"));
+                  StandardCharsets.UTF_8));
     } catch (IOException | URISyntaxException e) {
       e.printStackTrace();
     }
@@ -109,19 +109,19 @@ public class SkipCompileOptionTest {
 
     ArgumentCaptor<Map<String, Object>> input =
         ArgumentCaptor.forClass((Class<Map<String, Object>>) (Class<?>) Map.class);
-    ArgumentCaptor<List<InputStream>> listOfFiles =
-        ArgumentCaptor.forClass((Class<List<InputStream>>) (Class<?>) List.class);
+    ArgumentCaptor<File> file =
+            ArgumentCaptor.forClass((Class<File>) File.class);
     mockMvc.perform(request.param("skipCompile", "true")).andExpect(status().isOk());
 
-    verify(service).invokeOlga(input.capture(), listOfFiles.capture());
+    verify(service).invokeOlga(input.capture(), file.capture());
 
     assertTrue(input.getValue() != null);
     Map<String, Object> inputParm = input.getValue();
     assertTrue(
-        inputParm.containsKey("code") && ((CODE) inputParm.get("code")).equals(CODE.C_SHARP));
+        inputParm.containsKey("code") && inputParm.get("code").equals(CODE.C_SHARP));
     assertTrue(inputParm.containsKey("library")
-        && ((LIBRARY) inputParm.get("library")).equals(LIBRARY.TRINITY));
-    assertTrue(inputParm.containsKey("name") && ((String) inputParm.get("name")).equals("test"));
+        && inputParm.get("library").equals(LIBRARY.TRINITY));
+    assertTrue(inputParm.containsKey("name") && inputParm.get("name").equals("test"));
     assertTrue(inputParm.containsKey("skipCompile") && (boolean) inputParm.get("skipCompile"));
 
   }
@@ -132,19 +132,19 @@ public class SkipCompileOptionTest {
 
     ArgumentCaptor<Map<String, Object>> input =
         ArgumentCaptor.forClass((Class<Map<String, Object>>) (Class<?>) Map.class);
-    ArgumentCaptor<List<InputStream>> listOfFiles =
-        ArgumentCaptor.forClass((Class<List<InputStream>>) (Class<?>) List.class);
+    ArgumentCaptor<File> file =
+            ArgumentCaptor.forClass((Class<File>) File.class);
     mockMvc.perform(request.param("skipCompile", "false")).andExpect(status().isOk());
 
-    verify(service).invokeOlga(input.capture(), listOfFiles.capture());
+    verify(service).invokeOlga(input.capture(), file.capture());
 
     assertTrue(input.getValue() != null);
     Map<String, Object> inputParm = input.getValue();
     assertTrue(
-        inputParm.containsKey("code") && ((CODE) inputParm.get("code")).equals(CODE.C_SHARP));
+        inputParm.containsKey("code") && inputParm.get("code").equals(CODE.C_SHARP));
     assertTrue(inputParm.containsKey("library")
-        && ((LIBRARY) inputParm.get("library")).equals(LIBRARY.TRINITY));
-    assertTrue(inputParm.containsKey("name") && ((String) inputParm.get("name")).equals("test"));
+        && inputParm.get("library").equals(LIBRARY.TRINITY));
+    assertTrue(inputParm.containsKey("name") && inputParm.get("name").equals("test"));
     assertTrue(inputParm.containsKey("skipCompile") && !(boolean) inputParm.get("skipCompile"));
 
   }
@@ -155,19 +155,19 @@ public class SkipCompileOptionTest {
 
     ArgumentCaptor<Map<String, Object>> input =
         ArgumentCaptor.forClass((Class<Map<String, Object>>) (Class<?>) Map.class);
-    ArgumentCaptor<List<InputStream>> listOfFiles =
-        ArgumentCaptor.forClass((Class<List<InputStream>>) (Class<?>) List.class);
+    ArgumentCaptor<File> file =
+            ArgumentCaptor.forClass((Class<File>) File.class);
     mockMvc.perform(request).andExpect(status().isOk());
 
-    verify(service).invokeOlga(input.capture(), listOfFiles.capture());
+    verify(service).invokeOlga(input.capture(), file.capture());
 
     assertTrue(input.getValue() != null);
     Map<String, Object> inputParm = input.getValue();
     assertTrue(
-        inputParm.containsKey("code") && ((CODE) inputParm.get("code")).equals(CODE.C_SHARP));
+        inputParm.containsKey("code") && inputParm.get("code").equals(CODE.C_SHARP));
     assertTrue(inputParm.containsKey("library")
-        && ((LIBRARY) inputParm.get("library")).equals(LIBRARY.TRINITY));
-    assertTrue(inputParm.containsKey("name") && ((String) inputParm.get("name")).equals("test"));
+        && inputParm.get("library").equals(LIBRARY.TRINITY));
+    assertTrue(inputParm.containsKey("name") && inputParm.get("name").equals("test"));
     assertTrue(inputParm.containsKey("skipCompile") && !(boolean) inputParm.get("skipCompile"));
 
   }

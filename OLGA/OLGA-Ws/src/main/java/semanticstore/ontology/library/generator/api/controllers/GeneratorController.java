@@ -24,24 +24,20 @@
  */
 package semanticstore.ontology.library.generator.api.controllers;
 
-import java.io.ByteArrayInputStream;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.InputStream;
+import java.io.FileOutputStream;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Map;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import io.swagger.annotations.ApiParam;
+import org.springframework.web.multipart.MultipartFile;
 import semanticstore.ontology.library.generator.Exception.NotFoundException;
 import semanticstore.ontology.library.generator.Exception.ProjectGenerationException;
 import semanticstore.ontology.library.generator.api.interfaces.GeneratorApi;
@@ -78,12 +74,10 @@ public class GeneratorController implements GeneratorApi {
       @RequestParam(value = "partial", required = false, defaultValue = "false") String partial,
       @RequestParam(value = "skipCompile", required = false,
           defaultValue = "false") boolean skipCompile,
-      @ApiParam(value = "OLGA input parameters") @Valid @RequestBody String body,
+      @RequestParam(value = "file", required = true) MultipartFile file,
       HttpServletResponse response) throws Exception {
-    // String accept = request.getHeader("Accept");
     response.addHeader("Content-disposition", "attachment;filename=" + name + ".zip");
     response.setStatus(HttpServletResponse.SC_OK);
-    InputStream inputFileStream = new ByteArrayInputStream(body.getBytes(StandardCharsets.UTF_8));
 
     if (System.getenv("M2_HOME") == null) {
       NotFoundException exception = new NotFoundException(400,
@@ -101,8 +95,14 @@ public class GeneratorController implements GeneratorApi {
           Helper.parseInputs(code, name, library, preserve, version, partial, skipCompile);
       log.info("Parsing Inputs");
       outPath = (String) inputCmdParameters.get("out");
+
+      File f = File.createTempFile(file.getName(), null);
+      FileOutputStream o = new FileOutputStream(f);
+      IOUtils.copy(file.getInputStream(), o);
+      o.close();
+
       log.info("Invoke Olga Service");
-      service.invokeOlga(inputCmdParameters, Arrays.asList(inputFileStream));
+      service.invokeOlga(inputCmdParameters, f);
       result = service.getResult();
       long end_millis_overall = System.currentTimeMillis();
       Date time_diff_overall = new Date(end_millis_overall - start_millis_overall);
