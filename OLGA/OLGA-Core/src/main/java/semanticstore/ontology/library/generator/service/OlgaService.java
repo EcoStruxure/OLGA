@@ -25,19 +25,21 @@
 package semanticstore.ontology.library.generator.service;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
-import org.apache.commons.io.FileUtils;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import freemarker.template.TemplateException;
 import org.apache.log4j.Logger;
 import org.apache.maven.shared.invoker.MavenInvocationException;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
@@ -48,7 +50,6 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.OWLOntologyMerger;
-import freemarker.template.TemplateException;
 import semanticstore.ontology.library.generator.exceptions.InvalidClassNameException;
 import semanticstore.ontology.library.generator.exceptions.InvalidUriException;
 import semanticstore.ontology.library.generator.exceptions.UnableToCompileGeneratedCodeException;
@@ -66,10 +67,10 @@ public class OlgaService {
   private final static Logger log = Logger.getLogger(OlgaService.class);
   private Map<String, Object> inputParameters;
 
-  public void invokeOlga(Map<String, Object> inputParameters, List<InputStream> ontologyFiles)
+  public void invokeOlga(Map<String, Object> inputParameters, File file)
       throws Exception {
     String directoryName = (new File(inputParameters.get("out").toString())).getParent();
-    saveOntologyFilesInTempDirectory(ontologyFiles, directoryName);
+    saveOntologyFilesInTempDirectory(file, directoryName);
     inputParameters.put("pathToOntologiesParam", directoryName);
     try {
       invokeOlga(inputParameters);
@@ -137,13 +138,40 @@ public class OlgaService {
     return result;
   }
 
-  private void saveOntologyFilesInTempDirectory(List<InputStream> ontologyFiles,
+  private void saveOntologyFilesInTempDirectory(File file,
       String outDirectory) throws IOException {
 
-    for (int i = 1; i <= ontologyFiles.size(); i++) {
-      String fileName = outDirectory + File.separator + Integer.toString(i) + ".owl";
-      File targetFile = new File(fileName);
-      FileUtils.copyInputStreamToFile(ontologyFiles.get(i - 1), targetFile);
+    try {
+      byte[] buffer = new byte[1024];
+      FileInputStream fis = new FileInputStream(file);
+      ZipInputStream zis = new ZipInputStream(fis);
+      ZipEntry ze = zis.getNextEntry();
+      while(ze != null){
+          String fileName = ze.getName();
+          File newFile = new File(outDirectory + File.separator + fileName);
+          System.out.println("Unzipping to "+newFile.getAbsolutePath());
+          //create directories for sub directories in zip
+          new File(newFile.getParent()).mkdirs();
+          FileOutputStream fos = new FileOutputStream(newFile);
+          int len;
+          while ((len = zis.read(buffer)) > 0) {
+          fos.write(buffer, 0, len);
+          }
+          fos.close();
+          //close this ZipEntry
+          zis.closeEntry();
+          ze = zis.getNextEntry();
+      }
+      //close last ZipEntry
+      zis.closeEntry();
+      zis.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      /**
+       * delete temp file
+       */
+      file.delete();
     }
   }
 
