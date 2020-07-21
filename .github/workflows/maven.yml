@@ -13,6 +13,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x' 
     - name: Build with Maven
       run: mvn clean install --projects OLGA-Core,OLGA-Cli --file pom.xml -DskipTests
       working-directory: ./OLGA
