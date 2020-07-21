@@ -22,9 +22,9 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator.generators.python;
+package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
@@ -40,10 +40,10 @@ import semanticstore.ontology.library.generator.global.CODE;
 import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.service.OlgaService;
 
-public class OLGAPythonTest {
+public class OLGATestCsharp {
   private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
   private OlgaService service = new OlgaService();
-
+  
   @Before
   public void setUpStreams() throws UnsupportedEncodingException {
     PrintStream printStream = new PrintStream(errContent, false, "UTF-8");
@@ -61,14 +61,14 @@ public class OLGAPythonTest {
   public void testSimple() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("simple/simple.owl").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("simple/simple.owl").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "Simple");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -81,14 +81,14 @@ public class OLGAPythonTest {
   public void testDsp() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGAPythonTest.class.getClassLoader().getResource("remi").toURI()).toFile().toString();
+        .get(OLGATestCsharp.class.getClassLoader().getResource("remi").toURI()).toFile().toString();
     inputCmdParameters.put("name", "DSP");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -100,13 +100,13 @@ public class OLGAPythonTest {
   public void testoneM2M_Base_OntologyX() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAPythonTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGATestCsharp.class.getClassLoader()
         .getResource("PublicOntologies/oneM2M_Base_Ontology").toURI()).toFile().toString();
     inputCmdParameters.put("name", "oneM2M");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -119,14 +119,14 @@ public class OLGAPythonTest {
   public void testPizza() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGAPythonTest.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
+        .get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Pizza");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -139,14 +139,14 @@ public class OLGAPythonTest {
   public void testProvo() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGAPythonTest.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
+        .get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Prov");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -159,14 +159,14 @@ public class OLGAPythonTest {
   public void testSsn() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "SSN");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -180,54 +180,52 @@ public class OLGAPythonTest {
   public void testBrick() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("brick").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("brick").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "Brick");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
 
     assertTrue(service.getResult().equals("Success"));
-  }  
-
+  }
+  
   @Test(expected = InvalidClassNameException.class)
   public void testKnx() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Knx");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
-    
-    assertTrue(service.getResult().equals("Success"));
   }
   
   @Test
   public void testSarefMerged() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("saref").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("saref").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefMerged");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -240,14 +238,14 @@ public class OLGAPythonTest {
   public void testSarefImports() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("sarefImports").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("sarefImports").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefImports");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -260,15 +258,15 @@ public class OLGAPythonTest {
   public void testFiesta() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     inputCmdParameters.put("preserve", true);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("fiesta").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("fiesta").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Fiesta");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -281,14 +279,14 @@ public class OLGAPythonTest {
   public void testM3() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.PYTHON);
-    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
+    inputCmdParameters.put("code", CODE.C_SHARP);
+    inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAPythonTest.class.getClassLoader().getResource("m3").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("m3").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "M3");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -296,4 +294,5 @@ public class OLGAPythonTest {
     
     assertTrue(service.getResult().equals("Success"));
   }
+  
 }

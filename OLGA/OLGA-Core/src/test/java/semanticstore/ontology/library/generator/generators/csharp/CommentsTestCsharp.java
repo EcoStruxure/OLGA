@@ -44,7 +44,7 @@ import org.junit.runners.Parameterized.Parameters;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
 @RunWith(Parameterized.class)
-public class CommentsTestCs {
+public class CommentsTestCsharp {
 
   @BeforeClass
   public static void generateOntology() throws Exception {

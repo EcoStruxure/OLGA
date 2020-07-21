@@ -34,7 +34,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class DependenciesTest {
+public class DependenciesTestCsharp {
 
   @BeforeClass
   public static void generateOntology() throws Exception {

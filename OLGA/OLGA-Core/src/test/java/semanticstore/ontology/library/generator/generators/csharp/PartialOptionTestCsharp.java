@@ -25,29 +25,44 @@
 package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
 import static org.junit.Assert.assertTrue;
-import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class PreservePathOptionTestCs {
+public class PartialOptionTestCsharp {
 
   @BeforeClass
-  public static void generateOntology() {
-    assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("cs", "trinity"));
-    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("cs", "trinity"));
+  public static void generateOntology() throws Exception {
+    // check if the needed ontologies have been generated
+    assertTrue(GeneratedOntologies.isSimpleBasicPartialGenerated());
   }
 
   @Test
-  public void testPathWhenOptionSet_CSharp() {
-    File file = new File("OLGA/generated/SimplePreserve-dotnetTrinity/www/simple/com/Building.cs");
-    assertTrue(file.exists());
+  public void testPartial() throws IOException {
+    Path pathToClasses =
+        Paths.get("OLGA/generated/testSimplePartial-dotnetTrinity/TestSimplePartial/Rdf/Model/");
+    try (Stream<String> stream = Files.lines(pathToClasses.resolve("Building.cs"))) {
+      assertTrue(stream.anyMatch(line -> line.contains("partial")));
+    }
+    try (Stream<String> stream = Files.lines(pathToClasses.resolve("IBuilding.cs"))) {
+      assertTrue(stream.anyMatch(line -> line.contains("partial")));
+    }
   }
 
   @Test
-  public void testPathWhenOptionNotSet_CSharp() {
-    File file =
-        new File("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/Building.cs");
-    assertTrue(file.exists());
+  public void testPartialNotSet() throws IOException {
+    Path pathToClasses = Paths.get("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/");
+    try (Stream<String> stream = Files.lines(pathToClasses.resolve("Building.cs"))) {
+      assertTrue(!stream.anyMatch(line -> line.contains("partial")));
+    }
+    try (Stream<String> stream = Files.lines(pathToClasses.resolve("IBuilding.cs"))) {
+      assertTrue(!stream.anyMatch(line -> line.contains("partial")));
+    }
   }
+
 }

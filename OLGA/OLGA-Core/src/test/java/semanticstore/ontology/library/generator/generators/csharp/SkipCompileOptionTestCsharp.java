@@ -24,18 +24,15 @@
  */
 package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import java.io.IOException;
+import static org.junit.Assert.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class QueryWithReasoningTest {
+public class SkipCompileOptionTestCsharp {
 
   @BeforeClass
   public static void testSimple() {
@@ -43,28 +40,8 @@ public class QueryWithReasoningTest {
   }
 
   @Test
-  public void testWhenHasSubClass() {
-    Path fileName =
-        Paths.get("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/Sensor.cs")
-            .toAbsolutePath();
-    try (Stream<String> stream = Files.lines(fileName)) {
-      assertTrue(stream.anyMatch(line -> line.contains("[QueryWithReasoning]")));
-    } catch (IOException e) {
-      fail();
-    }
-
-  }
-
-  @Test
-  public void testWhenHasNotSubClass() {
-    Path fileName =
-        Paths.get("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/EnergySensor.cs")
-            .toAbsolutePath();
-    try (Stream<String> stream = Files.lines(fileName)) {
-      assertTrue(!stream.anyMatch(line -> line.contains("[QueryWithReasoning]")));
-    } catch (IOException e) {
-      fail();
-    }
-
+  public void testSkipCompile() {
+    Path binFolder = Paths.get("OLGA/generated/testSimple-dotnetTrinity/bin").toAbsolutePath();
+    assertTrue("Compilation was not skipped, bin folder found", !Files.exists(binFolder));
   }
 }

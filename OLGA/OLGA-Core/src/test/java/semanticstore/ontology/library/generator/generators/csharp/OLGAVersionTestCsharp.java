@@ -45,7 +45,7 @@ import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.resources.ResourceManager;
 import semanticstore.ontology.library.generator.service.OlgaService;
 
-public class OLGAVersionTest {
+public class OLGAVersionTestCsharp {
 
   private OlgaService service = new OlgaService();
 
@@ -85,7 +85,7 @@ public class OLGAVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAVersionTestCsharp.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "SimpleMyValidVersion");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -121,7 +121,7 @@ public class OLGAVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAVersionTestCsharp.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "SimpleWithoutVersion");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -158,7 +158,7 @@ public class OLGAVersionTest {
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAVersionTest.class.getClassLoader().getResource("versionedsimple").toURI())
+        Paths.get(OLGAVersionTestCsharp.class.getClassLoader().getResource("versionedsimple").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "versionedsimple");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -195,7 +195,7 @@ public class OLGAVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAVersionTestCsharp.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "SimpleWrongVersion");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);

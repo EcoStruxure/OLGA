@@ -24,24 +24,30 @@
  */
 package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
-import static org.junit.Assert.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class SkipCompileOptionTest {
+public class PreservePathOptionTestCsharp {
 
   @BeforeClass
-  public static void testSimple() {
+  public static void generateOntology() {
+    assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("cs", "trinity"));
     assertTrue(GeneratedOntologies.isSimpleBasicGenerated("cs", "trinity"));
   }
 
   @Test
-  public void testSkipCompile() {
-    Path binFolder = Paths.get("OLGA/generated/testSimple-dotnetTrinity/bin").toAbsolutePath();
-    assertTrue("Compilation was not skipped, bin folder found", !Files.exists(binFolder));
+  public void testPathWhenOptionSet_CSharp() {
+    File file = new File("OLGA/generated/SimplePreserve-dotnetTrinity/www/simple/com/Building.cs");
+    assertTrue(file.exists());
+  }
+
+  @Test
+  public void testPathWhenOptionNotSet_CSharp() {
+    File file =
+        new File("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/Building.cs");
+    assertTrue(file.exists());
   }
 }

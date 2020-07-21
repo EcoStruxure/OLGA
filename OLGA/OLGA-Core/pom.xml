@@ -41,7 +41,35 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<junit.version>4.12</junit.version>
 		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>
-  </properties>  
+  </properties>
+  <profiles>
+    <profile>
+    <id>csharp</id>
+    <properties>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+    <profile>
+    <id>python</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+    </properties>
+  </profile>
+  <profile>
+    <id>java</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+    <profile>
+    <id>default</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+</profiles>  
   <build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
