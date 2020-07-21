@@ -14,5 +14,5 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn clean install --projects OLGA-Core,OLGA-Cli --file pom.xml -P java
+      run: mvn clean install --projects OLGA-Core,OLGA-Cli --file pom.xml -Pjava
       working-directory: ./OLGA
