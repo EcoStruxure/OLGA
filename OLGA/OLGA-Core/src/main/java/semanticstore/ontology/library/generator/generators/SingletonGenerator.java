@@ -28,6 +28,11 @@ import java.io.IOException;
 import java.util.Map;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import semanticstore.ontology.library.generator.exceptions.InvalidUriException;
+import semanticstore.ontology.library.generator.generators.AbstractGenerator;
+import semanticstore.ontology.library.generator.generators.java.RDF4JGenerator;
+import semanticstore.ontology.library.generator.generators.csharp.TrinityGenerator;
+import semanticstore.ontology.library.generator.generators.python.RdfAlchemyGenerator;
+
 import semanticstore.ontology.library.generator.global.LIBRARY;
 
 /**
@@ -49,24 +54,24 @@ public class SingletonGenerator {
       throws IOException, XmlPullParserException, InvalidUriException {
     LIBRARY library = (LIBRARY) inputCmdParameters.get("library");
     switch (library) {
-//      case TRINITY:
-//        if (trinitySingleton == null) {
-//          trinitySingleton = new TrinityGenerator();
-//        }
-//        trinitySingleton.setParameters(inputCmdParameters);
-//        return trinitySingleton;
+      case TRINITY:
+        if (trinitySingleton == null) {
+          trinitySingleton = new TrinityGenerator();
+        }
+        trinitySingleton.setParameters(inputCmdParameters);
+        return trinitySingleton;
       case RDF4J:
         if (rdf4jSingleton == null) {
           rdf4jSingleton = new RDF4JGenerator();
         }
         rdf4jSingleton.setParameters(inputCmdParameters);
         return rdf4jSingleton;
-//      case RDFALCHEMY:
-//        if (rdfAlchemySingleton == null) {
-//          rdfAlchemySingleton = new RdfAlchemyGenerator();
-//        }
-//        rdfAlchemySingleton.setParameters(inputCmdParameters);
-//        return rdfAlchemySingleton;
+      case RDFALCHEMY:
+        if (rdfAlchemySingleton == null) {
+          rdfAlchemySingleton = new RdfAlchemyGenerator();
+        }
+        rdfAlchemySingleton.setParameters(inputCmdParameters);
+        return rdfAlchemySingleton;
       default:
         break;
     }

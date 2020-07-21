@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>semanticstore.ontology.library.generator</groupId>
 		<artifactId>OLGA</artifactId>
-		<version>0.0.5</version>
+		<version>0.0.6</version>
 	</parent>
 	<artifactId>OLGA-Cli</artifactId>
 	<name>OLGA-Cli</name>
