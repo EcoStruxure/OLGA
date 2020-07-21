@@ -49,24 +49,24 @@ public class SingletonGenerator {
       throws IOException, XmlPullParserException, InvalidUriException {
     LIBRARY library = (LIBRARY) inputCmdParameters.get("library");
     switch (library) {
-      case TRINITY:
-        if (trinitySingleton == null) {
-          trinitySingleton = new TrinityGenerator();
-        }
-        trinitySingleton.setParameters(inputCmdParameters);
-        return trinitySingleton;
+//      case TRINITY:
+//        if (trinitySingleton == null) {
+//          trinitySingleton = new TrinityGenerator();
+//        }
+//        trinitySingleton.setParameters(inputCmdParameters);
+//        return trinitySingleton;
       case RDF4J:
         if (rdf4jSingleton == null) {
           rdf4jSingleton = new RDF4JGenerator();
         }
         rdf4jSingleton.setParameters(inputCmdParameters);
         return rdf4jSingleton;
-      case RDFALCHEMY:
-        if (rdfAlchemySingleton == null) {
-          rdfAlchemySingleton = new RdfAlchemyGenerator();
-        }
-        rdfAlchemySingleton.setParameters(inputCmdParameters);
-        return rdfAlchemySingleton;
+//      case RDFALCHEMY:
+//        if (rdfAlchemySingleton == null) {
+//          rdfAlchemySingleton = new RdfAlchemyGenerator();
+//        }
+//        rdfAlchemySingleton.setParameters(inputCmdParameters);
+//        return rdfAlchemySingleton;
       default:
         break;
     }

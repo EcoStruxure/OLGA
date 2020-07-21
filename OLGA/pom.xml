@@ -25,6 +25,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
   </scm>
   <modules>
     <module>OLGA-Core</module>
+    <module>OLGA-Core-Java-Generator</module>
     <module>OLGA-Cli</module>
     <module>OLGA-Ws</module>
   </modules>

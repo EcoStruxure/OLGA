@@ -44,59 +44,27 @@ import org.junit.runners.Parameterized.Parameters;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
 @RunWith(Parameterized.class)
-public class CommentsTest {
+public class CommentsTestJava {
 
   @BeforeClass
   public static void generateOntology() throws Exception {
     // check if the needed ontologies have been generated
-    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("cs", "trinity"));
-    assertTrue(GeneratedOntologies.isSimpleLonelyBasicGenerated("cs", "trinity"));
-    assertTrue(GeneratedOntologies.isSarefBasicGenerated("cs", "trinity"));
     assertTrue(GeneratedOntologies.isSimpleBasicGenerated("java", "rdf4j"));
   }
 
   // building set of parameter to test : (code , path to tested class, expected comment, test name )
   @Parameters(name = "{index}: {0}-Comment {3}")
   public static Collection<Object[]> data() {
-    Path csharp = Paths.get("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/");
     Path java =
         Paths.get("OLGA/generated/testsimple-RDF4J-java/src/main/java/testsimple/rdf/model/");
-    Path csharpLonely =
-        Paths.get("OLGA/generated/testSimpleLonely-dotnetTrinity/TestSimpleLonely/Rdf/Model/");
-    Path cSharpSaref = Paths.get(
-        "OLGA/generated/Saref4CodeGenerationDataProperty-dotnetTrinity/Saref4CodeGenerationDataProperty/Rdf/Model/");
-
 
     List<Object[]> list = new ArrayList<>();
-
-    list.add(new Object[] {"CSHARP", csharp.resolve("IBuilding.cs"),
-        "/// testing comments in different classes.", "IBuilding.cs"});
-    list.add(new Object[] {"CSHARP", csharp.resolve("IPhysicalLocation.cs"),
-        "/// Shows actual location xxxx.", "IPhysicalLocation.cs"});
-    list.add(new Object[] {"CSHARP", csharp.resolve("ILocationItem.cs"),
-        "    /// Parent Class of the classes.", "ILocationItem.cs"});
-
-    list.add(new Object[] {"CSHARP LONELY", csharpLonely.resolve("IBuilding.cs"),
-        "/// shows building property.", "Data property"});
-    list.add(new Object[] {"CSHARP LONELY", csharpLonely.resolve("IBuilding.cs"),
-        "/// Depends on Building class.", "Object property 1"});
-    list.add(new Object[] {"CSHARP LONELY", csharpLonely.resolve("IBuilding.cs"),
-        "/// Object Property comment@!$%^*", "Object property 2"});
-    list.add(new Object[] {"CSHARP LONELY", csharpLonely.resolve("ILocationItem.cs"),
-        "/// Coordinator $", "Data property"});
-    list.add(new Object[] {"CSHARP LONELY", csharpLonely.resolve("IFloor.cs"),
-        "/// provides information about floor accronym~\"#%&*", "Data property"});
 
     list.add(new Object[] {"JAVA", java.resolve("Building.java"), "Class mabna", "Class"});
     list.add(new Object[] {"JAVA", java.resolve("Building.java"), "shows building property.",
         "Data property"});
     list.add(new Object[] {"JAVA", java.resolve("Building.java"), "Depends on Building class.",
         "Object Property"});
-
-    list.add(new Object[] {"CSHARP", cSharpSaref.resolve("IWashingMachine.cs"),
-        "/// <inheritdoc cref=\"IAppliance\"/>", "Comment Inheritance Saref WashMach"});
-    list.add(new Object[] {"CSHARP", cSharpSaref.resolve("ITemporalUnit.cs"),
-        "/// <inheritdoc cref=\"IUnitOfMeasure\"/>", "Comment Inheritance SarefTempUnit"});
 
     return list;
   }
