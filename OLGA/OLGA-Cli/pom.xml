@@ -40,7 +40,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<dependency>
 			<groupId>semanticstore.ontology.library.generator</groupId>
 			<artifactId>OLGA-Core</artifactId>
-			<version>0.0.5</version>
+			<version>0.0.6</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
