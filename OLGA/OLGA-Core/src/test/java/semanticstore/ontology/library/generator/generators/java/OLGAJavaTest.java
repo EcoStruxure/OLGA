@@ -212,46 +212,46 @@ public class OLGAJavaTest {
     assertTrue(service.getResult().equals("Success"));
   }
   
-  @Test
-  public void testSarefMerged() throws Exception {
-    
-    Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
-    inputCmdParameters.put("skipInverseRelations", false);
-    inputCmdParameters.put("skipCompile", false);
-    
-    String resourcesDirectory = null;
-    resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("saref").toURI())
-        .toFile().toString();
-    inputCmdParameters.put("name", "SarefMerged");
-    inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
-    service.invokeOlga(inputCmdParameters);
-    
-    assertTrue(service.getResult().equals("Success"));
-  }
-  
-  @Test
-  public void testSarefImports() throws Exception {
-    
-    Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
-    inputCmdParameters.put("skipInverseRelations", false);
-    inputCmdParameters.put("skipCompile", false);
-    inputCmdParameters.put("preserve", true);
-    
-    String resourcesDirectory = null;
-    resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("sarefImports").toURI())
-        .toFile().toString();
-    inputCmdParameters.put("name", "SarefImports");
-    inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
-    service.invokeOlga(inputCmdParameters);
-    
-    assertTrue(service.getResult().equals("Success"));
-  }
+//  @Test
+//  public void testSarefMerged() throws Exception {
+//    
+//    Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
+//    inputCmdParameters.put("code", CODE.JAVA);
+//    inputCmdParameters.put("library", LIBRARY.RDF4J);
+//    inputCmdParameters.put("skipInverseRelations", false);
+//    inputCmdParameters.put("skipCompile", false);
+//    
+//    String resourcesDirectory = null;
+//    resourcesDirectory =
+//        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("saref").toURI())
+//        .toFile().toString();
+//    inputCmdParameters.put("name", "SarefMerged");
+//    inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
+//    service.invokeOlga(inputCmdParameters);
+//    
+//    assertTrue(service.getResult().equals("Success"));
+//  }
+//  
+//  @Test
+//  public void testSarefImports() throws Exception {
+//    
+//    Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
+//    inputCmdParameters.put("code", CODE.JAVA);
+//    inputCmdParameters.put("library", LIBRARY.RDF4J);
+//    inputCmdParameters.put("skipInverseRelations", false);
+//    inputCmdParameters.put("skipCompile", false);
+//    inputCmdParameters.put("preserve", true);
+//    
+//    String resourcesDirectory = null;
+//    resourcesDirectory =
+//        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("sarefImports").toURI())
+//        .toFile().toString();
+//    inputCmdParameters.put("name", "SarefImports");
+//    inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
+//    service.invokeOlga(inputCmdParameters);
+//    
+//    assertTrue(service.getResult().equals("Success"));
+//  }
   
   @Test
   public void testFiesta() throws Exception {
