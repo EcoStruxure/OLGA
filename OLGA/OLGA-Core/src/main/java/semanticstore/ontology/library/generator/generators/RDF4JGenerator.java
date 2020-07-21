@@ -54,13 +54,12 @@ import semanticstore.ontology.library.generator.model.ZClass;
 import semanticstore.ontology.library.generator.model.ZObjectProperty;
 import semanticstore.ontology.library.generator.resources.ResourceManager;
 
-@dagger.Module
 public class RDF4JGenerator extends AbstractGenerator {
 
   private String globalFile;
   private final static Logger log = Logger.getLogger(RDF4JGenerator.class);
 
-  @Provides public RDF4JGenerator() {
+  public RDF4JGenerator() {
     dataToBeInject = new HashMap<>();
     listOfParentZClass = new ArrayList<>();
   }
