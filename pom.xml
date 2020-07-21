@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
- <!-- Used for the Continous Integration Build Only, please go to OLGA/OLGA and execute mvn there for build -->
- <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
   <groupId>semanticstore.ontology.library.generator</groupId>
   <artifactId>OLGA</artifactId>
-  <version>0.0.5</version>
+  <version>0.0.6</version>
   <packaging>pom</packaging>
   <name>OLGA</name>
-  <url>https://github.com/EcoStruxure/OLGA</url>
- <description>OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards (RDF, OWL) and generating a library conform to the ontology model.
+  <description>OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards (RDF, OWL) and generating a library conform to the ontology model.
 
 The generated library is then imported and used to programmatically to:
 
 Generate an ontology instance conform to the ontology model.
 Query the generated ontology instance by relying on Object Oriented Classes.</description>
- <licenses>
-	<license>
-		<name>MIT License</name>
-		<url>http://www.opensource.org/licenses/mit-license.php</url>
-	</license>
-</licenses>
-	
-<scm>
-  <connection>scm:git:git://github.com/EcoStruxure/OLGA.git</connection>
-  <developerConnection>scm:git:ssh://github.com:EcoStruxure/OLGA.git</developerConnection>
-  <url>https://github.com/EcoStruxure/OLGA</url>
-</scm>
- 
+<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+  <scm>
+	  <connection>scm:git:git://github.com/EcoStruxure/OLGA.git</connection>
+	  <developerConnection>scm:git:ssh://github.com:EcoStruxure/OLGA.git</developerConnection>
+	  <url>https://github.com/EcoStruxure/OLGA</url>
+  </scm>
   <modules>
     <module>OLGA-Core</module>
-    <module>OLG-Cli</module>
+    <module>OLGA-Cli</module>
     <module>OLGA-Ws</module>
   </modules>
 
+  <url>https://github.com/EcoStruxure/OLGA</url>
 </project>
