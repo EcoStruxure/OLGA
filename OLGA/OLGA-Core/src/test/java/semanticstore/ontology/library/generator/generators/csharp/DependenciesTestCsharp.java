@@ -22,7 +22,7 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
 import static org.junit.Assert.*;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class DependenciesTest {
+public class DependenciesTestCsharp {
 
   @BeforeClass
   public static void generateOntology() throws Exception {

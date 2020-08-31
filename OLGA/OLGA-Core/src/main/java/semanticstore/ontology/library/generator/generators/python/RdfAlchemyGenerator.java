@@ -22,7 +22,7 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.generators;
+package semanticstore.ontology.library.generator.generators.python;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -50,6 +50,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateNotFoundException;
 import semanticstore.ontology.library.generator.exceptions.InvalidUriException;
+import semanticstore.ontology.library.generator.generators.AbstractGenerator;
 import semanticstore.ontology.library.generator.global.UTILS;
 import semanticstore.ontology.library.generator.model.ZClass;
 import semanticstore.ontology.library.generator.model.ZInstance;

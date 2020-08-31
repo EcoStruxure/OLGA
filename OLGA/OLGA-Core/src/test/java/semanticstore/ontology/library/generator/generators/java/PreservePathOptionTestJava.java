@@ -22,7 +22,7 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.java;
 
 import static org.junit.Assert.assertTrue;
 import java.io.File;
@@ -30,29 +30,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class PreservePathOptionTest {
+public class PreservePathOptionTestJava {
 
   @BeforeClass
   public static void generateOntology() {
-    assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("cs", "trinity"));
-    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("cs", "trinity"));
     assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("java", "rdf4j"));
     assertTrue(GeneratedOntologies.isSimpleBasicGenerated("java", "rdf4j"));
-    assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("python", "rdfalchemy"));
-    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("python", "rdfalchemy"));
-  }
-
-  @Test
-  public void testPathWhenOptionSet_CSharp() {
-    File file = new File("OLGA/generated/SimplePreserve-dotnetTrinity/www/simple/com/Building.cs");
-    assertTrue(file.exists());
-  }
-
-  @Test
-  public void testPathWhenOptionNotSet_CSharp() {
-    File file =
-        new File("OLGA/generated/testSimple-dotnetTrinity/TestSimple/Rdf/Model/Building.cs");
-    assertTrue(file.exists());
   }
 
   @Test
@@ -66,20 +49,6 @@ public class PreservePathOptionTest {
   public void testPathWhenOptionNotSet_Java() {
     File file = new File(
         "OLGA/generated/testsimple-RDF4J-java/src/main/java/testsimple/rdf/model/Building.java");
-    assertTrue(file.exists());
-  }
-
-  @Test
-  public void testPathWhenOptionSet_Python() {
-    File file =
-        new File("OLGA/generated/SimplePreserve-python/simplepreserve/www/simple/com/Building.py");
-    assertTrue(file.exists());
-  }
-
-  @Test
-  public void testPathWhenOptionNotSet_Python() {
-    File file =
-        new File("OLGA/generated/testSimple-python/testsimple/TestSimple/Rdf/Model/Building.py");
     assertTrue(file.exists());
   }
 }

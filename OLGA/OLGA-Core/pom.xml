@@ -10,7 +10,7 @@
   </parent>  
   <artifactId>OLGA-Core</artifactId>
   <name>OLGA-Core</name>
-  <url>https://github.com/EcoStruxure/OLGA/tree/master/OLGA/OLGA-Core</url>
+	<url>https://github.com/EcoStruxure/OLGA/tree/master/OLGA/OLGA-Core</url>
   <description>OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards (RDF, OWL) and generating a library conform to the ontology model.
 
 The generated library is then imported and used to programmatically to:
@@ -41,7 +41,35 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<junit.version>4.12</junit.version>
 		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>
-  </properties>  
+  </properties>
+  <profiles>
+    <profile>
+    <id>csharp</id>
+    <properties>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+    <profile>
+    <id>python</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+    </properties>
+  </profile>
+  <profile>
+    <id>java</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+    <profile>
+    <id>default</id>
+    <properties>
+      <exclude.tests>**/*Csharp</exclude.tests>
+      <exclude.tests>**/*Python</exclude.tests>
+    </properties>
+  </profile>
+</profiles>  
   <build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -62,6 +90,13 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>com.google.dagger</groupId>
+							<artifactId>dagger-compiler</artifactId>
+							<version>2.28.3</version>
+						</path>
+					</annotationProcessorPaths>
 					<manifest>
 						<mainClass>semanticstore.ontology.library.generator.olga.OlgaService</mainClass>
 					</manifest>

@@ -22,7 +22,7 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
 import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
@@ -40,7 +40,7 @@ import semanticstore.ontology.library.generator.global.CODE;
 import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.service.OlgaService;
 
-public class OLGACSharpTest {
+public class OLGATestCsharp {
   private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
   private OlgaService service = new OlgaService();
   
@@ -68,7 +68,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("simple/simple.owl").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("simple/simple.owl").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "Simple");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -88,7 +88,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGACSharpTest.class.getClassLoader().getResource("remi").toURI()).toFile().toString();
+        .get(OLGATestCsharp.class.getClassLoader().getResource("remi").toURI()).toFile().toString();
     inputCmdParameters.put("name", "DSP");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -106,7 +106,7 @@ public class OLGACSharpTest {
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGACSharpTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGATestCsharp.class.getClassLoader()
         .getResource("PublicOntologies/oneM2M_Base_Ontology").toURI()).toFile().toString();
     inputCmdParameters.put("name", "oneM2M");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -126,7 +126,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGACSharpTest.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
+        .get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Pizza");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -146,7 +146,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory = Paths
-        .get(OLGACSharpTest.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
+        .get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Prov");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -166,7 +166,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "SSN");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -187,7 +187,7 @@ public class OLGACSharpTest {
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("brick").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("brick").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "Brick");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -207,7 +207,7 @@ public class OLGACSharpTest {
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Knx");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -225,7 +225,7 @@ public class OLGACSharpTest {
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("saref").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("saref").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefMerged");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -245,7 +245,7 @@ public class OLGACSharpTest {
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("sarefImports").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("sarefImports").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefImports");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -266,7 +266,7 @@ public class OLGACSharpTest {
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("fiesta").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("fiesta").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Fiesta");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -286,7 +286,7 @@ public class OLGACSharpTest {
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGACSharpTest.class.getClassLoader().getResource("m3").toURI())
+        Paths.get(OLGATestCsharp.class.getClassLoader().getResource("m3").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "M3");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);

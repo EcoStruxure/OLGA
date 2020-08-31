@@ -28,6 +28,11 @@ import java.io.IOException;
 import java.util.Map;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import semanticstore.ontology.library.generator.exceptions.InvalidUriException;
+import semanticstore.ontology.library.generator.generators.AbstractGenerator;
+import semanticstore.ontology.library.generator.generators.java.RDF4JGenerator;
+import semanticstore.ontology.library.generator.generators.csharp.TrinityGenerator;
+import semanticstore.ontology.library.generator.generators.python.RdfAlchemyGenerator;
+
 import semanticstore.ontology.library.generator.global.LIBRARY;
 
 /**

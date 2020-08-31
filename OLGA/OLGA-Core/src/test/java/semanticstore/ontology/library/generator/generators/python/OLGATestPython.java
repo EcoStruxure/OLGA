@@ -22,9 +22,9 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.python;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
@@ -40,7 +40,7 @@ import semanticstore.ontology.library.generator.global.CODE;
 import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.service.OlgaService;
 
-public class OLGAJavaTest {
+public class OLGATestPython {
   private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
   private OlgaService service = new OlgaService();
 
@@ -61,14 +61,15 @@ public class OLGAJavaTest {
   public void testSimple() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
-    String resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("simple/simple.owl").toURI())
-            .toString();
+    String resourcesDirectory = null;
+    resourcesDirectory =
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("simple/simple.owl").toURI())
+            .toFile().toString();
     inputCmdParameters.put("name", "Simple");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -80,13 +81,14 @@ public class OLGAJavaTest {
   public void testDsp() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
-    String resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("remi").toURI()).toString();
+    String resourcesDirectory = null;
+    resourcesDirectory = Paths
+        .get(OLGATestPython.class.getClassLoader().getResource("remi").toURI()).toFile().toString();
     inputCmdParameters.put("name", "DSP");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -98,14 +100,14 @@ public class OLGAJavaTest {
   public void testoneM2M_Base_OntologyX() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAJavaTest.class.getClassLoader()
-        .getResource("PublicOntologies/oneM2M_Base_Ontology").toURI()).toString();
+    resourcesDirectory = Paths.get(OLGATestPython.class.getClassLoader()
+        .getResource("PublicOntologies/oneM2M_Base_Ontology").toURI()).toFile().toString();
     inputCmdParameters.put("name", "oneM2M");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -117,15 +119,15 @@ public class OLGAJavaTest {
   public void testPizza() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
-    resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
-            .toFile().toString();
+    resourcesDirectory = Paths
+        .get(OLGATestPython.class.getClassLoader().getResource("PublicOntologies/pizza").toURI())
+        .toFile().toString();
     inputCmdParameters.put("name", "Pizza");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
@@ -137,13 +139,14 @@ public class OLGAJavaTest {
   public void testProvo() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
-    String resourcesDirectory = Paths
-        .get(OLGAJavaTest.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
+    String resourcesDirectory = null;
+    resourcesDirectory = Paths
+        .get(OLGATestPython.class.getClassLoader().getResource("PublicOntologies/prov-o").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Prov");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -156,13 +159,14 @@ public class OLGAJavaTest {
   public void testSsn() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
-    String resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
+    String resourcesDirectory = null;
+    resourcesDirectory =
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("PublicOntologies/ssn").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "SSN");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -176,34 +180,34 @@ public class OLGAJavaTest {
   public void testBrick() throws Exception {
 
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("brick").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("brick").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "Brick");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
 
     assertTrue(service.getResult().equals("Success"));
-  }
+  }  
 
   @Test(expected = InvalidClassNameException.class)
   public void testKnx() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("PublicOntologies/knx").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Knx");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -216,14 +220,14 @@ public class OLGAJavaTest {
   public void testSarefMerged() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("saref").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("saref").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefMerged");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -236,15 +240,14 @@ public class OLGAJavaTest {
   public void testSarefImports() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
-    inputCmdParameters.put("preserve", true);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("sarefImports").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("sarefImports").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "SarefImports");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -257,15 +260,15 @@ public class OLGAJavaTest {
   public void testFiesta() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     inputCmdParameters.put("preserve", true);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("fiesta").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("fiesta").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "Fiesta");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -278,14 +281,14 @@ public class OLGAJavaTest {
   public void testM3() throws Exception {
     
     Map<String, Object> inputCmdParameters = new HashMap<String, Object>();
-    inputCmdParameters.put("code", CODE.JAVA);
-    inputCmdParameters.put("library", LIBRARY.RDF4J);
+    inputCmdParameters.put("code", CODE.PYTHON);
+    inputCmdParameters.put("library", LIBRARY.RDFALCHEMY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", false);
     
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAJavaTest.class.getClassLoader().getResource("m3").toURI())
+        Paths.get(OLGATestPython.class.getClassLoader().getResource("m3").toURI())
         .toFile().toString();
     inputCmdParameters.put("name", "M3");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);

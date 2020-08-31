@@ -22,7 +22,7 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.java;
 
 import static org.junit.Assert.*;
 import java.io.ByteArrayOutputStream;
@@ -85,7 +85,7 @@ public class OLGAJavaVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAJavaVersionTest.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "SimpleValidVersion");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -115,7 +115,7 @@ public class OLGAJavaVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAJavaVersionTest.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "SimpleWithoutMyVersion");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -146,7 +146,7 @@ public class OLGAJavaVersionTest {
 
     String resourcesDirectory = null;
     resourcesDirectory =
-        Paths.get(OLGAVersionTest.class.getClassLoader().getResource("versionedsimple").toURI())
+        Paths.get(OLGAJavaVersionTest.class.getClassLoader().getResource("versionedsimple").toURI())
             .toFile().toString();
     inputCmdParameters.put("name", "versionedsimple");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
@@ -177,7 +177,7 @@ public class OLGAJavaVersionTest {
     inputCmdParameters.put("out", folder4Versions.toFile().toString());
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths.get(OLGAVersionTest.class.getClassLoader()
+    resourcesDirectory = Paths.get(OLGAJavaVersionTest.class.getClassLoader()
         .getResource("simple/simple.owl").toURI()).toFile().toString();
     inputCmdParameters.put("name", "WrongVersionName");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);

@@ -22,26 +22,33 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.python;
 
-import static org.junit.Assert.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import static org.junit.Assert.assertTrue;
+import java.io.File;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class SkipCompileOptionTest {
+public class PreservePathOptionTestPython {
 
   @BeforeClass
-  public static void testSimple() {
-    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("cs", "trinity"));
+  public static void generateOntology() {
+    assertTrue(GeneratedOntologies.isSimpleBasicPreserveGenerated("python", "rdfalchemy"));
+    assertTrue(GeneratedOntologies.isSimpleBasicGenerated("python", "rdfalchemy"));
   }
 
   @Test
-  public void testSkipCompile() {
-    Path binFolder = Paths.get("OLGA/generated/testSimple-dotnetTrinity/bin").toAbsolutePath();
-    assertTrue("Compilation was not skipped, bin folder found", !Files.exists(binFolder));
+  public void testPathWhenOptionSet_Python() {
+    File file =
+        new File("OLGA/generated/SimplePreserve-python/simplepreserve/www/simple/com/Building.py");
+    assertTrue(file.exists());
+  }
+
+  @Test
+  public void testPathWhenOptionNotSet_Python() {
+    File file =
+        new File("OLGA/generated/testSimple-python/testsimple/TestSimple/Rdf/Model/Building.py");
+    assertTrue(file.exists());
   }
 }

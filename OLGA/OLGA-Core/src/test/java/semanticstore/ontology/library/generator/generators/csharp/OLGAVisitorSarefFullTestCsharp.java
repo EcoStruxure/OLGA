@@ -48,7 +48,7 @@ import semanticstore.ontology.library.generator.visitor.OLGAVisitor;
 /*
  * OLGA tested with saref tested areas: Classes,Subclasses,Class Properties.
  */
-public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
+public class OLGAVisitorSarefFullTestCsharp implements OWLObjectVisitor {
   /*
    * creating the IRI's to the classes
    */
@@ -339,7 +339,7 @@ public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
     try {
       OWLOntology test_ontology_to_visit =
           owlManager.loadOntologyFromOntologyDocument(test_ontFile);
-      olgaVisitor = new OLGAVisitor(test_ontology_to_visit, CODE.JAVA, LIBRARY.RDF4J, false);
+      olgaVisitor = new OLGAVisitor(test_ontology_to_visit, CODE.C_SHARP, LIBRARY.TRINITY, false);
       olgaVisitor.visit();
     } catch (OWLOntologyCreationException e) {
       e.printStackTrace();
@@ -728,7 +728,7 @@ public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
     assertEquals(dataProperList.size(), 1);
     List<ZDataProperty> FilterByIRI = findZDataPropertyItemByIRI(hasDescriptionIRI, dataProperList);
     assertEquals(FilterByIRI.size(), 1);
-    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "String");
+    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "string");
 
     List<ZObjectProperty> isCommand =
         findObjectPropertyByIRI(isCommandOfIRI, zcommand.getZObjectPropertyList());
@@ -751,7 +751,7 @@ public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
     assertEquals(dataProperList.size(), 1);
     List<ZDataProperty> FilterByIRI = findZDataPropertyItemByIRI(hasDescriptionIRI, dataProperList);
     assertEquals(FilterByIRI.size(), 1);
-    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "String");
+    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "string");
 
     List<ZObjectProperty> isCommand =
         findObjectPropertyByIRI(isCommandOfIRI, zcommand.getZObjectPropertyList());
@@ -1018,15 +1018,15 @@ public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
     assertEquals(dataProperList.size(), 3);
     List<ZDataProperty> FilterByIRI = findZDataPropertyItemByIRI(hasDescriptionIRI, dataProperList);
     assertEquals(FilterByIRI.size(), 1);
-    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "String");
+    assertEquals(((ZDataProperty) FilterByIRI.get(0)).getRangeXSDType(), "string");
     List<ZDataProperty> hasManufacturer =
         findZDataPropertyItemByIRI(hasManufacturerIRI, dataProperList);
     assertEquals(hasManufacturer.size(), 1);
-    assertEquals(((ZDataProperty) hasManufacturer.get(0)).getRangeXSDType(), "String");
+    assertEquals(((ZDataProperty) hasManufacturer.get(0)).getRangeXSDType(), "string");
 
     List<ZDataProperty> hasModel = findZDataPropertyItemByIRI(hasModelIRI, dataProperList);
     assertEquals(hasModel.size(), 1);
-    assertEquals(((ZDataProperty) hasModel.get(0)).getRangeXSDType(), "String");
+    assertEquals(((ZDataProperty) hasModel.get(0)).getRangeXSDType(), "string");
 
   }
 
@@ -1260,6 +1260,19 @@ public class OLGAVisitorSarefFullTest implements OWLObjectVisitor {
     List<ZObjectProperty> hasFunction =
         findObjectPropertyByIRI(hasFunctionIRI, zsmokesensor.getZObjectPropertyList());
     assertEquals(hasFunction.size(), 2);
+
+    if (hasFunction.get(0).getRangeListZClasses().iterator().next().getKey().getIri()
+        .equals(eventFunctionIRI)) {
+      assertEquals(hasFunction.get(1).getRangeListZClasses().iterator().next().getKey().getIri(),
+          smokeSensorIRI);
+    } else {
+      if (hasFunction.get(1).getRangeListZClasses().iterator().next().getKey().getIri()
+          .equals(sensingFunctionIRI)) {
+        assertEquals(hasFunction.get(0).getRangeListZClasses().iterator().next().getKey().getIri(),
+            smokeSensorIRI);
+      }
+    }
+
   }
 
   @Test

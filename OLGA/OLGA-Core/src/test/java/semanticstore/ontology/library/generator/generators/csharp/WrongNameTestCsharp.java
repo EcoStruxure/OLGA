@@ -22,32 +22,48 @@
  * 
  * ---------------------
  */
-package semanticstore.ontology.library.generator.code.generator;
+package semanticstore.ontology.library.generator.code.generator.generators.csharp;
 
-import static org.junit.Assert.assertTrue;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import semanticstore.ontology.library.generator.exceptions.InvalidUriException;
 import semanticstore.ontology.library.generator.global.CODE;
 import semanticstore.ontology.library.generator.global.LIBRARY;
 import semanticstore.ontology.library.generator.service.OlgaService;
-import semanticstore.ontology.library.generator.test.utils.GeneratedOntologies;
 
-public class OLGAOutputOptionTest {
+public class WrongNameTestCsharp {
 
+  @Rule
+  public ExpectedException expected = ExpectedException.none();
 
-  static Path outputPath;
+  private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
-  @BeforeClass
-  public static void setUpStreams() throws Exception {
+  @Before
+  public void setUpStreams() throws UnsupportedEncodingException {
+    PrintStream printStream = new PrintStream(errContent, false, "UTF-8");
+    System.setErr(printStream);
+    errContent.reset();
+  }
 
-    outputPath = Files.createTempDirectory("testOutput");
-    outputPath.toFile().deleteOnExit();
+  @After
+  public void cleanUpStreams() {
+    System.setErr(null);
+
+  }
+
+  @Test
+  public void testWrongName() throws Exception {
+
+    expected.expect(InvalidUriException.class);
 
     OlgaService service = new OlgaService();
 
@@ -56,26 +72,15 @@ public class OLGAOutputOptionTest {
     inputCmdParameters.put("library", LIBRARY.TRINITY);
     inputCmdParameters.put("skipInverseRelations", false);
     inputCmdParameters.put("skipCompile", true);
-    inputCmdParameters.put("out", outputPath.toFile().toString());
+    inputCmdParameters.put("ontVersion", "01.99.45");
 
     String resourcesDirectory = null;
-    resourcesDirectory = Paths
-        .get(GeneratedOntologies.class.getClassLoader().getResource("simple/simple.owl").toURI())
-        .toFile().toString();
-    inputCmdParameters.put("name", "testSimpleWithOut");
+    resourcesDirectory =
+        Paths.get(WrongNameTestCsharp.class.getClassLoader().getResource("simple/wrongname.owl").toURI())
+            .toFile().toString();
+    inputCmdParameters.put("name", "WrongNameOntology");
     inputCmdParameters.put("pathToOntologiesParam", resourcesDirectory);
     service.invokeOlga(inputCmdParameters);
-  }
 
-  @After
-  public void cleanUpStreams() {
-    System.setErr(null);
-  }
-
-  @Test
-  public void testFolderExists() {
-    assertTrue(Files.exists(outputPath.resolve("testSimpleWithOut-dotnetTrinity")));
-    assertTrue(Files.exists(
-        outputPath.resolve("testSimpleWithOut-dotnetTrinity").resolve("testsimplewithout.csproj")));
   }
 }
