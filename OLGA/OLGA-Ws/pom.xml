@@ -81,7 +81,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
