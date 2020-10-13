@@ -38,7 +38,7 @@ Query the generated ontology instance by relying on Object Oriented Classes.</de
 		<maven-invoker.version>2.0.0</maven-invoker.version>
 		<maven-model.version>3.3.9</maven-model.version>
 		<org.atteo.version>1.2.2</org.atteo.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<log.version>1.7.25</log.version>
 		<log4j.version>1.2.17</log4j.version>
   </properties>  
